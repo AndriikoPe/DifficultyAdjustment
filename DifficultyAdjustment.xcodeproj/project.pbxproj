@@ -13,6 +13,9 @@
 		47AB242B29BFB6BF005AFCE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47AB242929BFB6BF005AFCE0 /* Main.storyboard */; };
 		47AB242D29BFB6BF005AFCE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47AB242C29BFB6BF005AFCE0 /* Assets.xcassets */; };
 		47AB243029BFB6BF005AFCE0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47AB242E29BFB6BF005AFCE0 /* LaunchScreen.storyboard */; };
+		47AB243929BFBC5C005AFCE0 /* JoystickNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AB243829BFBC5C005AFCE0 /* JoystickNode.swift */; };
+		47AB243B29BFBD53005AFCE0 /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AB243A29BFBD53005AFCE0 /* CGPoint+Extensions.swift */; };
+		47AB244029BFC168005AFCE0 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AB243F29BFC168005AFCE0 /* AppConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +26,9 @@
 		47AB242A29BFB6BF005AFCE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		47AB242C29BFB6BF005AFCE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		47AB242F29BFB6BF005AFCE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		47AB243829BFBC5C005AFCE0 /* JoystickNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoystickNode.swift; sourceTree = "<group>"; };
+		47AB243A29BFBD53005AFCE0 /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extensions.swift"; sourceTree = "<group>"; };
+		47AB243F29BFC168005AFCE0 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,13 +62,56 @@
 			isa = PBXGroup;
 			children = (
 				47AB241F29BFB6BF005AFCE0 /* AppDelegate.swift */,
-				47AB242529BFB6BF005AFCE0 /* GameScene.swift */,
-				47AB242729BFB6BF005AFCE0 /* GameViewController.swift */,
+				47AB243E29BFC15D005AFCE0 /* Utils */,
+				47AB243D29BFBD63005AFCE0 /* Nodes */,
+				47AB243629BFBC46005AFCE0 /* Scenes */,
+				47AB243729BFBC4E005AFCE0 /* Controllers */,
 				47AB242929BFB6BF005AFCE0 /* Main.storyboard */,
 				47AB242C29BFB6BF005AFCE0 /* Assets.xcassets */,
 				47AB242E29BFB6BF005AFCE0 /* LaunchScreen.storyboard */,
 			);
 			path = DifficultyAdjustment;
+			sourceTree = "<group>";
+		};
+		47AB243629BFBC46005AFCE0 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				47AB242529BFB6BF005AFCE0 /* GameScene.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		47AB243729BFBC4E005AFCE0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				47AB242729BFB6BF005AFCE0 /* GameViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		47AB243C29BFBD5C005AFCE0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				47AB243A29BFBD53005AFCE0 /* CGPoint+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		47AB243D29BFBD63005AFCE0 /* Nodes */ = {
+			isa = PBXGroup;
+			children = (
+				47AB243829BFBC5C005AFCE0 /* JoystickNode.swift */,
+			);
+			path = Nodes;
+			sourceTree = "<group>";
+		};
+		47AB243E29BFC15D005AFCE0 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				47AB243C29BFBD5C005AFCE0 /* Extensions */,
+				47AB243F29BFC168005AFCE0 /* AppConstants.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +186,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				47AB242629BFB6BF005AFCE0 /* GameScene.swift in Sources */,
+				47AB244029BFC168005AFCE0 /* AppConstants.swift in Sources */,
+				47AB243B29BFBD53005AFCE0 /* CGPoint+Extensions.swift in Sources */,
 				47AB242829BFB6BF005AFCE0 /* GameViewController.swift in Sources */,
 				47AB242029BFB6BF005AFCE0 /* AppDelegate.swift in Sources */,
+				47AB243929BFBC5C005AFCE0 /* JoystickNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
