@@ -16,6 +16,8 @@
 		47AB243929BFBC5C005AFCE0 /* JoystickNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AB243829BFBC5C005AFCE0 /* JoystickNode.swift */; };
 		47AB243B29BFBD53005AFCE0 /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AB243A29BFBD53005AFCE0 /* CGPoint+Extensions.swift */; };
 		47AB244029BFC168005AFCE0 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AB243F29BFC168005AFCE0 /* AppConstants.swift */; };
+		47AB244229BFD401005AFCE0 /* PlayerNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AB244129BFD401005AFCE0 /* PlayerNode.swift */; };
+		47AB244429BFD55B005AFCE0 /* PhysicsCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AB244329BFD55B005AFCE0 /* PhysicsCategory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		47AB243829BFBC5C005AFCE0 /* JoystickNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoystickNode.swift; sourceTree = "<group>"; };
 		47AB243A29BFBD53005AFCE0 /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extensions.swift"; sourceTree = "<group>"; };
 		47AB243F29BFC168005AFCE0 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		47AB244129BFD401005AFCE0 /* PlayerNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerNode.swift; sourceTree = "<group>"; };
+		47AB244329BFD55B005AFCE0 /* PhysicsCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsCategory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				47AB243829BFBC5C005AFCE0 /* JoystickNode.swift */,
+				47AB244129BFD401005AFCE0 /* PlayerNode.swift */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -110,6 +115,7 @@
 			children = (
 				47AB243C29BFBD5C005AFCE0 /* Extensions */,
 				47AB243F29BFC168005AFCE0 /* AppConstants.swift */,
+				47AB244329BFD55B005AFCE0 /* PhysicsCategory.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -185,6 +191,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47AB244229BFD401005AFCE0 /* PlayerNode.swift in Sources */,
+				47AB244429BFD55B005AFCE0 /* PhysicsCategory.swift in Sources */,
 				47AB242629BFB6BF005AFCE0 /* GameScene.swift in Sources */,
 				47AB244029BFC168005AFCE0 /* AppConstants.swift in Sources */,
 				47AB243B29BFBD53005AFCE0 /* CGPoint+Extensions.swift in Sources */,
@@ -344,7 +352,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -372,7 +380,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

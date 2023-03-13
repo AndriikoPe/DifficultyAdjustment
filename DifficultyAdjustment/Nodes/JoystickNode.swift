@@ -9,25 +9,28 @@ import SpriteKit
 import GameplayKit
 
 final class Joystick: SKNode {
-    let base: SKSpriteNode
-    let knob: SKSpriteNode
-    let joystickRadius: CGFloat
-    var velocity = CGPoint.zero
+    private let base: SKShapeNode
+    private let knob: SKShapeNode
+    private let joystickRadius: CGFloat
+    private(set) var velocity = CGPoint.zero
     
     init(baseColor: UIColor, baseSize: CGSize, knobColor: UIColor, knobSize: CGSize, joystickRadius: CGFloat) {
-        self.base = SKSpriteNode(color: baseColor, size: baseSize)
-        self.knob = SKSpriteNode(color: knobColor, size: knobSize)
+        base = SKShapeNode(circleOfRadius: baseSize.width * 0.5)
+        base.fillColor = baseColor
+
+        knob = SKShapeNode(circleOfRadius: knobSize.width * 0.5)
+        knob.fillColor = knobColor
+        
         self.joystickRadius = joystickRadius
         
         super.init()
         
-        self.isUserInteractionEnabled = true
+        isUserInteractionEnabled = true
+        base.zPosition = 1
+        addChild(base)
         
-        self.base.zPosition = 1
-        self.addChild(self.base)
-        
-        self.knob.zPosition = 2
-        self.addChild(self.knob)
+        knob.zPosition = 2
+        addChild(knob)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -54,20 +57,22 @@ final class Joystick: SKNode {
         self.resetKnob()
     }
     
-    func moveKnob(to position: CGPoint) {
+    private func moveKnob(to position: CGPoint) {
         let distance = self.base.position.distance(to: position)
         let angle = self.base.position.angle(to: position)
         
         if distance <= self.joystickRadius {
             self.knob.position = position
         } else {
-            self.knob.position = CGPoint(x: self.base.position.x + cos(angle) * self.joystickRadius, y: self.base.position.y + sin(angle) * self.joystickRadius)
+            self.knob.position = CGPoint(
+                x: self.base.position.x + cos(angle) * self.joystickRadius,
+                y: self.base.position.y + sin(angle) * self.joystickRadius)
         }
         
         self.velocity = CGPoint(x: cos(angle), y: sin(angle))
     }
     
-    func resetKnob() {
+    private func resetKnob() {
         let move = SKAction.move(to: self.base.position, duration: 0.1)
         move.timingMode = .easeOut
         self.knob.run(move)
