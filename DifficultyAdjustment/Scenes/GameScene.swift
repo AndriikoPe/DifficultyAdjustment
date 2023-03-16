@@ -77,11 +77,15 @@ final class GameScene: SKScene {
         run(.repeatForever(
             .sequence([
                 .run { [weak self] in
-                    let enemy = JustEnemyNode(texture: SKTexture(imageNamed: "enemyShip1"))
+                    guard let self else { return }
+                    
+                    let enemy = Bool.random() ?
+                        JustEnemyNode(texture: SKTexture(imageNamed: "enemyShip1")) :
+                        ChasingEnemy(playerNode: self.player)
                     
                     enemy.position = .init(x: 0, y: 400)
-                    self?.addChild(enemy)
-                    self?.enemies.insert(enemy)
+                    self.addChild(enemy)
+                    self.enemies.insert(enemy)
                 },
                 .wait(forDuration: 3.0)
             ])

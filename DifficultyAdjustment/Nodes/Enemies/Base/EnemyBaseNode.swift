@@ -8,11 +8,11 @@
 import SpriteKit
 
 class EnemyBaseNode: SKSpriteNode {
- 
-    var moveSpeed: CGFloat = 5.0
-    var moveDirection: CGVector = CGVector(dx: 1, dy: 0)
-    var shootDirection: CGVector = CGVector(dx: 0, dy: 1)
-    var shootFrequency: TimeInterval = 2.0
+    var moveDirection: CGVector
+    var moveSpeed: CGFloat
+    var shootFrequency: TimeInterval
+    
+    private var lastShotTime: TimeInterval = 0.0
     
     init(
         texture: SKTexture,
@@ -24,7 +24,6 @@ class EnemyBaseNode: SKSpriteNode {
     ) {
         self.moveSpeed = moveSpeed
         self.moveDirection = moveDirection
-        self.shootDirection = shootDirection
         self.shootFrequency = shootFrequency
         self.lastShotTime = lastShotTime
         
@@ -36,7 +35,6 @@ class EnemyBaseNode: SKSpriteNode {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 
     func update() {
         let dx = moveDirection.dx * moveSpeed
@@ -59,7 +57,5 @@ class EnemyBaseNode: SKSpriteNode {
         
         parent?.addChild(bullet)
     }
-    
-    private var lastShotTime: TimeInterval = 0.0
 }
 
