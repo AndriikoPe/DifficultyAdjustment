@@ -9,10 +9,16 @@ import SpriteKit
 
 final class PlayerNode: SKSpriteNode {
     
-    var velocity = CGPoint.zero
-    var lastShotTime: TimeInterval = 0
+    // MARK: - Tweakable params.
+    
     var timeBetweenShots: TimeInterval = 0.2
     var isShooting = true
+    var moveSpeed = 3.0
+    
+    // MARK: - Other properties.
+    
+    private(set) var velocity = CGPoint.zero
+    private(set) var lastShotTime: TimeInterval = 0
     private let joystick: Joystick
     
     init(joystick: Joystick) {
@@ -35,15 +41,16 @@ final class PlayerNode: SKSpriteNode {
     
     func update() {
         let joystickVelocity = joystick.velocity
-        let speed = CGFloat(150.0)
         
-        let x = joystickVelocity.x * speed
-        let y = joystickVelocity.y * speed
+        let x = joystickVelocity.x * moveSpeed
+        let y = joystickVelocity.y * moveSpeed
         
         velocity = CGPoint(x: x, y: y)
         
-        let angle = atan2(y, x)
-        zRotation = angle - CGFloat.pi / 2
+        if joystickVelocity != .zero {
+            let angle = atan2(y, x)
+            zRotation = angle - CGFloat.pi / 2
+        }
         
         if isShooting {
             shoot()
@@ -72,16 +79,8 @@ final class PlayerNode: SKSpriteNode {
         
         lastShotTime = currentTime
         
-        let bullet = SKSpriteNode(color: .green, size: CGSize(width: 5, height: 5))
-        bullet.zPosition = -1
-        bullet.position = position
-        
-        let bulletVelocity = CGPoint(x: cos(zRotation + CGFloat.pi / 2), y: sin(zRotation + CGFloat.pi / 2))
-        let bulletAction = SKAction.sequence([
-            SKAction.move(by: CGVector(dx: bulletVelocity.x * 1000, dy: bulletVelocity.y * 1000), duration: 3),
-            SKAction.removeFromParent()
-        ])
-        bullet.run(bulletAction)
+        let bullet = Bullet(color: .green, size: CGSize(width: 5, height: 5))
+        bullet.fire(from: position, in: zRotation)
         
         parent?.addChild(bullet)
     }

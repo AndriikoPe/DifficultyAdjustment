@@ -47,18 +47,9 @@ final class GameScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         player.update()
+        player.position += player.velocity
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if let touch = touches.first {
-            let touchLocation = touch.location(in: self)
-//            if pauseButton.contains(touchLocation) {
-//                player.pauseShooting()
-//            } else if resumeButton.contains(touchLocation) {
-//                player.resumeShooting()
-//            }
-        }
-    }
 
     // Handle changes to the time between shots
     func updateTimeBetweenShots(_ timeBetweenShots: TimeInterval) {
