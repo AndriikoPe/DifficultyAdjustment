@@ -67,10 +67,6 @@ final class PlayerNode: SKSpriteNode {
         shoot()
     }
     
-    func setTimeBetweenShots(_ time: TimeInterval) {
-        timeBetweenShots = time
-    }
-    
     private func shoot() {
         let currentTime = CACurrentMediaTime()
         if currentTime - lastShotTime < timeBetweenShots {
@@ -79,7 +75,7 @@ final class PlayerNode: SKSpriteNode {
         
         lastShotTime = currentTime
         
-        let bullet = Bullet(color: .green, size: CGSize(width: 5, height: 5))
+        let bullet = Bullet(owner: .player, color: .green, size: CGSize(width: 5, height: 5))
         bullet.fire(from: position, in: zRotation)
         
         parent?.addChild(bullet)

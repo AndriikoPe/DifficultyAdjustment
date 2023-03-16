@@ -8,7 +8,15 @@
 import SpriteKit
 
 final class Bullet: SKSpriteNode {
-    init(color: UIColor, size: CGSize) {
+    
+    enum Owner {
+        case player
+        case enemy
+    }
+    
+    var moveSpeed: CGFloat = 1200.0
+    
+    init(owner: Owner, color: UIColor, size: CGSize) {
         super.init(texture: nil, color: color, size: size)
         zPosition = -1
     }
@@ -22,7 +30,7 @@ final class Bullet: SKSpriteNode {
         
         let velocity = CGPoint(x: cos(direction + CGFloat.pi / 2), y: sin(direction + CGFloat.pi / 2))
         let action = SKAction.sequence([
-            SKAction.move(by: CGVector(dx: velocity.x * 1000, dy: velocity.y * 1000), duration: 3),
+            SKAction.move(by: CGVector(dx: velocity.x * moveSpeed, dy: velocity.y * moveSpeed), duration: 3),
             SKAction.removeFromParent()
         ])
         

@@ -38,17 +38,35 @@ final class GameScene: SKScene {
     }()
     
     lazy var player = PlayerNode(joystick: joystick)
+    private var enemies = Set<EnemyBaseNode>()
     
     override func didMove(to view: SKView) {
         backgroundColor = .black
         setupJoystick()
         setupPlayer()
+        setupEnemyWaves()
     }
     
     override func update(_ currentTime: TimeInterval) {
         player.update()
+        enemies.forEach { $0.update() }
+        
+        // Calculate the bounds of the playable area
+        let playableWidth = size.width - player.size.width
+        let playableHeight = size.height - player.size.height
+        let playableArea = CGRect(
+            x: player.size.width * 0.5,
+            y: player.size.height * 0.5,
+            width: playableWidth,
+            height: playableHeight
+        )
+        
+        // Update the player's position based on its velocity, clamped to the playable area
         player.position += player.velocity
+        player.position.x = max(min(player.position.x, playableArea.maxX), playableArea.minX)
+        player.position.y = max(min(player.position.y, playableArea.maxY), playableArea.minY)
     }
+
     
 
     // Handle changes to the time between shots
@@ -57,11 +75,25 @@ final class GameScene: SKScene {
     }
     // MARK: - Setup.
     
+    private func setupEnemyWaves() {
+        run(.repeatForever(
+            .sequence([
+                .run { [weak self] in
+                    let enemy = JustEnemyNode(color: .cyan, size: .init(width: 150, height: 100))
+                    enemy.position = .init(x: 0, y: 400)
+                    self?.addChild(enemy)
+                    self?.enemies.insert(enemy)
+                },
+                .wait(forDuration: 3.0)
+            ])
+        ))
+    }
+    
     private func setupJoystick() {
         self.joystick.position = C.Joystick.position
         self.addChild(self.joystick)
-    }
-    
+            }
+            
     private func setupPlayer() {
         player = PlayerNode(joystick: joystick)
         player.position = CGPoint(x: size.width * 0.5, y: size.height * 0.5)

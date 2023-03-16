@@ -9,11 +9,15 @@ import UIKit
 
 extension CGPoint {
     func distance(to point: CGPoint) -> CGFloat {
-        return sqrt(pow(point.x - self.x, 2) + pow(point.y - self.y, 2))
+        sqrt(pow(point.x - self.x, 2) + pow(point.y - self.y, 2))
     }
     
     func angle(to point: CGPoint) -> CGFloat {
-        return atan2(point.y - self.y, point.x - self.x)
+        atan2(point.y - self.y, point.x - self.x)
+    }
+    
+    static func * (point: CGPoint, scalar: CGFloat) -> CGPoint {
+        CGPoint(x: point.x * scalar, y: point.y * scalar)
     }
     
     static func += (lhs: inout CGPoint, rhs: CGPoint) {

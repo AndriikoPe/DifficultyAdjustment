@@ -19,6 +19,8 @@
 		47AB244029BFC168005AFCE0 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AB243F29BFC168005AFCE0 /* AppConstants.swift */; };
 		47AB244229BFD401005AFCE0 /* PlayerNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AB244129BFD401005AFCE0 /* PlayerNode.swift */; };
 		47AB244429BFD55B005AFCE0 /* PhysicsCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AB244329BFD55B005AFCE0 /* PhysicsCategory.swift */; };
+		47CB3E2A29C38F9D00C00C91 /* EnemyBaseNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CB3E2929C38F9D00C00C91 /* EnemyBaseNode.swift */; };
+		47CB3E2D29C392D800C00C91 /* JustEnemyNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CB3E2C29C392D800C00C91 /* JustEnemyNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		47AB243F29BFC168005AFCE0 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		47AB244129BFD401005AFCE0 /* PlayerNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerNode.swift; sourceTree = "<group>"; };
 		47AB244329BFD55B005AFCE0 /* PhysicsCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsCategory.swift; sourceTree = "<group>"; };
+		47CB3E2929C38F9D00C00C91 /* EnemyBaseNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemyBaseNode.swift; sourceTree = "<group>"; };
+		47CB3E2C29C392D800C00C91 /* JustEnemyNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustEnemyNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,7 @@
 		47AB243D29BFBD63005AFCE0 /* Nodes */ = {
 			isa = PBXGroup;
 			children = (
+				47CB3E2B29C38FE100C00C91 /* Enemies */,
 				47AB243829BFBC5C005AFCE0 /* JoystickNode.swift */,
 				47AB244129BFD401005AFCE0 /* PlayerNode.swift */,
 				4783CB9929C37C8D002DC581 /* BulletNode.swift */,
@@ -121,6 +126,15 @@
 				47AB244329BFD55B005AFCE0 /* PhysicsCategory.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		47CB3E2B29C38FE100C00C91 /* Enemies */ = {
+			isa = PBXGroup;
+			children = (
+				47CB3E2929C38F9D00C00C91 /* EnemyBaseNode.swift */,
+				47CB3E2C29C392D800C00C91 /* JustEnemyNode.swift */,
+			);
+			path = Enemies;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,11 +208,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47CB3E2A29C38F9D00C00C91 /* EnemyBaseNode.swift in Sources */,
 				47AB244229BFD401005AFCE0 /* PlayerNode.swift in Sources */,
 				47AB244429BFD55B005AFCE0 /* PhysicsCategory.swift in Sources */,
 				4783CB9A29C37C8D002DC581 /* BulletNode.swift in Sources */,
 				47AB242629BFB6BF005AFCE0 /* GameScene.swift in Sources */,
 				47AB244029BFC168005AFCE0 /* AppConstants.swift in Sources */,
+				47CB3E2D29C392D800C00C91 /* JustEnemyNode.swift in Sources */,
 				47AB243B29BFBD53005AFCE0 /* CGPoint+Extensions.swift in Sources */,
 				47AB242829BFB6BF005AFCE0 /* GameViewController.swift in Sources */,
 				47AB242029BFB6BF005AFCE0 /* AppDelegate.swift in Sources */,
