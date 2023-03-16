@@ -61,25 +61,24 @@ final class GameScene: SKScene {
             height: playableHeight
         )
         
-        // Update the player's position based on its velocity, clamped to the playable area
         player.position += player.velocity
         player.position.x = max(min(player.position.x, playableArea.maxX), playableArea.minX)
         player.position.y = max(min(player.position.y, playableArea.maxY), playableArea.minY)
     }
 
     
-
-    // Handle changes to the time between shots
     func updateTimeBetweenShots(_ timeBetweenShots: TimeInterval) {
         player.timeBetweenShots = timeBetweenShots
     }
+    
     // MARK: - Setup.
     
     private func setupEnemyWaves() {
         run(.repeatForever(
             .sequence([
                 .run { [weak self] in
-                    let enemy = JustEnemyNode(color: .cyan, size: .init(width: 150, height: 100))
+                    let enemy = JustEnemyNode(texture: SKTexture(imageNamed: "enemyShip1"))
+                    
                     enemy.position = .init(x: 0, y: 400)
                     self?.addChild(enemy)
                     self?.enemies.insert(enemy)

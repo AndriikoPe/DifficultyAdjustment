@@ -13,7 +13,7 @@ final class PlayerNode: SKSpriteNode {
     
     var timeBetweenShots: TimeInterval = 0.2
     var isShooting = true
-    var moveSpeed = 3.0
+    var moveSpeed = 4.0
     
     // MARK: - Other properties.
     
