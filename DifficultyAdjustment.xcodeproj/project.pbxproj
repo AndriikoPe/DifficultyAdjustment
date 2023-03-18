@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4754257629C5E2B2007CB8D6 /* HealthBarNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4754257529C5E2B2007CB8D6 /* HealthBarNode.swift */; };
 		4783CB9A29C37C8D002DC581 /* BulletNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4783CB9929C37C8D002DC581 /* BulletNode.swift */; };
 		47AB242029BFB6BF005AFCE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AB241F29BFB6BF005AFCE0 /* AppDelegate.swift */; };
 		47AB242629BFB6BF005AFCE0 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AB242529BFB6BF005AFCE0 /* GameScene.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4754257529C5E2B2007CB8D6 /* HealthBarNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthBarNode.swift; sourceTree = "<group>"; };
 		4783CB9929C37C8D002DC581 /* BulletNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletNode.swift; sourceTree = "<group>"; };
 		47AB241C29BFB6BF005AFCE0 /* DifficultyAdjustment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DifficultyAdjustment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47AB241F29BFB6BF005AFCE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +58,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4754257729C5E2C4007CB8D6 /* HelpingNodes */ = {
+			isa = PBXGroup;
+			children = (
+				4783CB9929C37C8D002DC581 /* BulletNode.swift */,
+				4754257529C5E2B2007CB8D6 /* HealthBarNode.swift */,
+			);
+			path = HelpingNodes;
+			sourceTree = "<group>";
+		};
+		4754257829C5E2D0007CB8D6 /* PlayerNodes */ = {
+			isa = PBXGroup;
+			children = (
+				47AB244129BFD401005AFCE0 /* PlayerNode.swift */,
+				47AB243829BFBC5C005AFCE0 /* JoystickNode.swift */,
+			);
+			path = PlayerNodes;
+			sourceTree = "<group>";
+		};
 		47AB241329BFB6BF005AFCE0 = {
 			isa = PBXGroup;
 			children = (
@@ -115,10 +135,9 @@
 		47AB243D29BFBD63005AFCE0 /* Nodes */ = {
 			isa = PBXGroup;
 			children = (
-				47CB3E2B29C38FE100C00C91 /* Enemies */,
-				47AB243829BFBC5C005AFCE0 /* JoystickNode.swift */,
-				47AB244129BFD401005AFCE0 /* PlayerNode.swift */,
-				4783CB9929C37C8D002DC581 /* BulletNode.swift */,
+				47CB3E2B29C38FE100C00C91 /* EnemyNodes */,
+				4754257729C5E2C4007CB8D6 /* HelpingNodes */,
+				4754257829C5E2D0007CB8D6 /* PlayerNodes */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -133,14 +152,14 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		47CB3E2B29C38FE100C00C91 /* Enemies */ = {
+		47CB3E2B29C38FE100C00C91 /* EnemyNodes */ = {
 			isa = PBXGroup;
 			children = (
 				47CB3E3029C39E5E00C00C91 /* Base */,
 				47CB3E2C29C392D800C00C91 /* JustEnemyNode.swift */,
 				47CB3E2E29C399D300C00C91 /* ChasingEnemy.swift */,
 			);
-			path = Enemies;
+			path = EnemyNodes;
 			sourceTree = "<group>";
 		};
 		47CB3E3029C39E5E00C00C91 /* Base */ = {
@@ -227,6 +246,7 @@
 				47AB244229BFD401005AFCE0 /* PlayerNode.swift in Sources */,
 				47AB244429BFD55B005AFCE0 /* PhysicsCategory.swift in Sources */,
 				4783CB9A29C37C8D002DC581 /* BulletNode.swift in Sources */,
+				4754257629C5E2B2007CB8D6 /* HealthBarNode.swift in Sources */,
 				47AB242629BFB6BF005AFCE0 /* GameScene.swift in Sources */,
 				47AB244029BFC168005AFCE0 /* AppConstants.swift in Sources */,
 				47CB3E2D29C392D800C00C91 /* JustEnemyNode.swift in Sources */,

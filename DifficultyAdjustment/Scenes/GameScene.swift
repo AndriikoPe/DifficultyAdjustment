@@ -39,6 +39,7 @@ final class GameScene: SKScene {
     
     lazy var player = PlayerNode(joystick: joystick)
     private var enemies = Set<EnemyBaseNode>()
+    private var healthBars = [(SKSpriteNode, HealthBarNode)]()
     
     override func didMove(to view: SKView) {
         backgroundColor = .black
@@ -50,8 +51,12 @@ final class GameScene: SKScene {
     override func update(_ currentTime: TimeInterval) {
         player.update()
         enemies.forEach { $0.update() }
+        healthBars.forEach { entity, bar in
+            bar.position = .init(
+                x: entity.position.x,
+                y: entity.position.y - entity.size.width * 0.5 - 10.0)
+        }
         
-        // Calculate the bounds of the playable area
         let playableWidth = size.width - player.size.width
         let playableHeight = size.height - player.size.height
         let playableArea = CGRect(
@@ -65,7 +70,7 @@ final class GameScene: SKScene {
         player.position.x = max(min(player.position.x, playableArea.maxX), playableArea.minX)
         player.position.y = max(min(player.position.y, playableArea.maxY), playableArea.minY)
     }
-
+    
     
     func updateTimeBetweenShots(_ timeBetweenShots: TimeInterval) {
         player.timeBetweenShots = timeBetweenShots
@@ -80,8 +85,8 @@ final class GameScene: SKScene {
                     guard let self else { return }
                     
                     let enemy = Bool.random() ?
-                        JustEnemyNode(texture: SKTexture(imageNamed: "enemyShip1")) :
-                        ChasingEnemy(playerNode: self.player)
+                    JustEnemyNode(texture: SKTexture(imageNamed: "enemyShip1")) :
+                    ChasingEnemy(playerNode: self.player)
                     
                     enemy.position = .init(x: 0, y: 400)
                     self.addChild(enemy)
@@ -95,12 +100,18 @@ final class GameScene: SKScene {
     private func setupJoystick() {
         self.joystick.position = C.Joystick.position
         self.addChild(self.joystick)
-            }
-            
+    }
+    
     private func setupPlayer() {
         player = PlayerNode(joystick: joystick)
         player.position = CGPoint(x: size.width * 0.5, y: size.height * 0.5)
         player.isShooting = true
         addChild(player)
+        
+        let healthBar = HealthBarNode(
+            size: .init(width: player.size.width, height: 10.0))
+        addChild(healthBar)
+        
+        healthBars.append((player, healthBar))
     }
 }
