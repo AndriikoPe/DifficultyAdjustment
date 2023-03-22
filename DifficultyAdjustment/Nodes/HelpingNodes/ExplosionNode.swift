@@ -8,23 +8,21 @@
 import SpriteKit
 
 final class ExplosionNode: SKSpriteNode {
-    private static let textureAtlas = SKTextureAtlas(named: "Exposion")
+    private static let textureAtlas = SKTextureAtlas(named: "Explosion")
     private static let textures = (1...11).map {
         textureAtlas.textureNamed("Explosion1_\($0)")
     }
 
-    static func createExplosion(at point: CGPoint, on scene: SKScene, size: CGSize) -> ExplosionNode {
+    static func createExplosion(at point: CGPoint, on scene: SKScene, size: CGSize) {
         let explosion = ExplosionNode(size: size)
         explosion.position = point
         explosion.zPosition = 100
-        scene.addChild(scene)
+        scene.addChild(explosion)
         
         let animateAction = SKAction.animate(with: textures, timePerFrame: 0.05)
         let removeAction = SKAction.removeFromParent()
         let sequence = SKAction.sequence([animateAction, removeAction])
         explosion.run(sequence)
-        
-        return explosion
     }
     
     private init(size: CGSize) {

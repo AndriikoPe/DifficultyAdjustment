@@ -11,11 +11,12 @@ final class ChasingEnemy: EnemyBaseNode {
     
     private let playerNode: SKNode
     
-    init(playerNode: SKNode) {
+    init(playerNode: SKNode, healthDelegate: HealthDelegate) {
         self.playerNode = playerNode
         
         super.init(
             texture: SKTexture(imageNamed: "enemyShip2"),
+            healthDelegate: healthDelegate,
             moveSpeed: 12.0
         )
     }

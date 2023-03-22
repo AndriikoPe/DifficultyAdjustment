@@ -41,8 +41,8 @@ final class Bullet: SKSpriteNode {
     
     private func setupPhysicsBody(owner: Owner) {
         physicsBody = .init(rectangleOf: size)
-        physicsBody?.affectedByGravity = false
-
+        physicsBody?.isDynamic = false
+        
         switch owner {
         case .player:
             physicsBody?.categoryBitMask = PhysicsCategory.playerBullet
@@ -51,5 +51,12 @@ final class Bullet: SKSpriteNode {
             physicsBody?.categoryBitMask = PhysicsCategory.enemyBullet
             physicsBody?.contactTestBitMask = PhysicsCategory.player
         }
+    }
+}
+
+extension Bullet: ColliderProtocol {
+    func collide(with other: SKPhysicsBody, in scene: SKScene) {
+        ExplosionNode.createExplosion(at: position, on: scene, size: size * 15.0)
+        removeFromParent()
     }
 }

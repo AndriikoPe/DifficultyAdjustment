@@ -86,8 +86,8 @@ final class GameScene: SKScene {
                     guard let self else { return }
                     
                     let enemy = Bool.random() ?
-                    JustEnemyNode(texture: SKTexture(imageNamed: "enemyShip1")) :
-                    ChasingEnemy(playerNode: self.player)
+                    JustEnemyNode(texture: SKTexture(imageNamed: "enemyShip1"), healthDelegate: self) :
+                    ChasingEnemy(playerNode: self.player, healthDelegate: self)
                     
                     enemy.position = .init(x: 0, y: 400)
                     self.addChild(enemy)
@@ -130,7 +130,20 @@ extension GameScene: SKPhysicsContactDelegate {
         case p.enemy | p.playerBullet:
             break
         default:
-            break
+            return
         }
+        
+        (contact.bodyA.node as? ColliderProtocol)?.collide(with: contact.bodyB, in: self)
+        (contact.bodyB.node as? ColliderProtocol)?.collide(with: contact.bodyA, in: self)
+    }
+}
+
+extension GameScene: HealthDelegate {
+    func died(_ node: SKSpriteNode) {
+        
+    }
+    
+    func updateHealth(_ node: SKSpriteNode, newHealth: CGFloat) {
+        
     }
 }

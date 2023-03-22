@@ -12,11 +12,13 @@ class EnemyBaseNode: SKSpriteNode {
     var moveSpeed: CGFloat
     var damageOnHit: CGFloat
     var shootFrequency: TimeInterval
+    weak var healthDelegate: HealthDelegate?
     
     private var lastShotTime: TimeInterval = 0.0
     
     init(
         texture: SKTexture,
+        healthDelegate: HealthDelegate?,
         moveSpeed: CGFloat = 5.0,
         moveDirection: CGVector = CGVector(dx: 1, dy: 0),
         shootDirection: CGVector = CGVector(dx: 0, dy: 1),
@@ -59,5 +61,11 @@ class EnemyBaseNode: SKSpriteNode {
         bullet.fire(from: position, in: zRotation)
         
         parent?.addChild(bullet)
+    }
+}
+
+extension EnemyBaseNode: ColliderProtocol {
+    func collide(with other: SKPhysicsBody, in scene: SKScene) {
+        
     }
 }

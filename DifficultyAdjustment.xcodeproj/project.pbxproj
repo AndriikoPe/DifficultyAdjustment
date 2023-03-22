@@ -25,6 +25,9 @@
 		47CB3E2F29C399D300C00C91 /* ChasingEnemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CB3E2E29C399D300C00C91 /* ChasingEnemy.swift */; };
 		47CB3E3429C3A12400C00C91 /* CGVector+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CB3E3329C3A12400C00C91 /* CGVector+Extensions.swift */; };
 		47DE9AF229CBAAF000FAC28A /* ExplosionNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DE9AF129CBAAF000FAC28A /* ExplosionNode.swift */; };
+		47DE9AF529CBADE900FAC28A /* HealthDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DE9AF429CBADE900FAC28A /* HealthDelegate.swift */; };
+		47DE9AF729CBAF1B00FAC28A /* ColliderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DE9AF629CBAF1B00FAC28A /* ColliderProtocol.swift */; };
+		47DE9AF929CBB1DD00FAC28A /* CGSize+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DE9AF829CBB1DD00FAC28A /* CGSize+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +50,9 @@
 		47CB3E2E29C399D300C00C91 /* ChasingEnemy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChasingEnemy.swift; sourceTree = "<group>"; };
 		47CB3E3329C3A12400C00C91 /* CGVector+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGVector+Extensions.swift"; sourceTree = "<group>"; };
 		47DE9AF129CBAAF000FAC28A /* ExplosionNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplosionNode.swift; sourceTree = "<group>"; };
+		47DE9AF429CBADE900FAC28A /* HealthDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDelegate.swift; sourceTree = "<group>"; };
+		47DE9AF629CBAF1B00FAC28A /* ColliderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColliderProtocol.swift; sourceTree = "<group>"; };
+		47DE9AF829CBB1DD00FAC28A /* CGSize+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +137,7 @@
 			children = (
 				47AB243A29BFBD53005AFCE0 /* CGPoint+Extensions.swift */,
 				47CB3E3329C3A12400C00C91 /* CGVector+Extensions.swift */,
+				47DE9AF829CBB1DD00FAC28A /* CGSize+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -148,6 +155,7 @@
 		47AB243E29BFC15D005AFCE0 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				47DE9AF329CBADDE00FAC28A /* Protocols */,
 				47AB243C29BFBD5C005AFCE0 /* Extensions */,
 				47AB243F29BFC168005AFCE0 /* AppConstants.swift */,
 				47AB244329BFD55B005AFCE0 /* PhysicsCategory.swift */,
@@ -171,6 +179,15 @@
 				47CB3E2929C38F9D00C00C91 /* EnemyBaseNode.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		47DE9AF329CBADDE00FAC28A /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				47DE9AF429CBADE900FAC28A /* HealthDelegate.swift */,
+				47DE9AF629CBAF1B00FAC28A /* ColliderProtocol.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,9 +261,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47DE9AF529CBADE900FAC28A /* HealthDelegate.swift in Sources */,
 				47CB3E2F29C399D300C00C91 /* ChasingEnemy.swift in Sources */,
 				47CB3E2A29C38F9D00C00C91 /* EnemyBaseNode.swift in Sources */,
 				47AB244229BFD401005AFCE0 /* PlayerNode.swift in Sources */,
+				47DE9AF929CBB1DD00FAC28A /* CGSize+Extensions.swift in Sources */,
 				47AB244429BFD55B005AFCE0 /* PhysicsCategory.swift in Sources */,
 				4783CB9A29C37C8D002DC581 /* BulletNode.swift in Sources */,
 				47DE9AF229CBAAF000FAC28A /* ExplosionNode.swift in Sources */,
@@ -257,6 +276,7 @@
 				47AB243B29BFBD53005AFCE0 /* CGPoint+Extensions.swift in Sources */,
 				47AB242829BFB6BF005AFCE0 /* GameViewController.swift in Sources */,
 				47AB242029BFB6BF005AFCE0 /* AppDelegate.swift in Sources */,
+				47DE9AF729CBAF1B00FAC28A /* ColliderProtocol.swift in Sources */,
 				47CB3E3429C3A12400C00C91 /* CGVector+Extensions.swift in Sources */,
 				47AB243929BFBC5C005AFCE0 /* JoystickNode.swift in Sources */,
 			);

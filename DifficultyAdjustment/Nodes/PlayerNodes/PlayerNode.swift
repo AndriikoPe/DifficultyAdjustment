@@ -81,3 +81,18 @@ final class PlayerNode: SKSpriteNode {
         parent?.addChild(bullet)
     }
 }
+
+extension PlayerNode: ColliderProtocol {
+    func collide(with other: SKPhysicsBody, in scene: SKScene) {
+        let p = PhysicsCategory.self
+        
+        switch other.categoryBitMask {
+        case p.enemy:
+            break
+        case p.enemyBullet:
+            break
+        default:
+            break
+        }
+    }
+}
