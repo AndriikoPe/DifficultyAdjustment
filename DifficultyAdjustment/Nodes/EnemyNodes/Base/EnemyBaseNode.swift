@@ -10,6 +10,7 @@ import SpriteKit
 class EnemyBaseNode: SKSpriteNode {
     var moveDirection: CGVector
     var moveSpeed: CGFloat
+    var damageOnHit: CGFloat
     var shootFrequency: TimeInterval
     
     private var lastShotTime: TimeInterval = 0.0
@@ -20,12 +21,14 @@ class EnemyBaseNode: SKSpriteNode {
         moveDirection: CGVector = CGVector(dx: 1, dy: 0),
         shootDirection: CGVector = CGVector(dx: 0, dy: 1),
         shootFrequency: TimeInterval = 2.0,
+        damageOnHit: CGFloat = 0.1,
         lastShotTime: TimeInterval = 0.0
     ) {
         self.moveSpeed = moveSpeed
         self.moveDirection = moveDirection
         self.shootFrequency = shootFrequency
         self.lastShotTime = lastShotTime
+        self.damageOnHit = damageOnHit
         
         super.init(texture: texture, color: .clear, size: texture.size())
         
@@ -58,4 +61,3 @@ class EnemyBaseNode: SKSpriteNode {
         parent?.addChild(bullet)
     }
 }
-

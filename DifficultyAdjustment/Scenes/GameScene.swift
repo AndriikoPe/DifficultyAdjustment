@@ -46,6 +46,7 @@ final class GameScene: SKScene {
         setupJoystick()
         setupPlayer()
         setupEnemyWaves()
+        physicsWorld.contactDelegate = self
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -113,5 +114,23 @@ final class GameScene: SKScene {
         addChild(healthBar)
         
         healthBars.append((player, healthBar))
+    }
+}
+
+extension GameScene: SKPhysicsContactDelegate {
+    func didBegin(_ contact: SKPhysicsContact) {
+        let contactMask = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
+        let p = PhysicsCategory.self
+        
+        switch contactMask {
+        case p.player | p.enemyBullet:
+            break
+        case p.player | p.enemy:
+            break
+        case p.enemy | p.playerBullet:
+            break
+        default:
+            break
+        }
     }
 }

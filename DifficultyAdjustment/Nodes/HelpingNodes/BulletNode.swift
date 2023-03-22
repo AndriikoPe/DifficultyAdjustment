@@ -18,7 +18,9 @@ final class Bullet: SKSpriteNode {
     
     init(owner: Owner, color: UIColor, size: CGSize) {
         super.init(texture: nil, color: color, size: size)
+        
         zPosition = -1
+        setupPhysicsBody(owner: owner)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -35,5 +37,19 @@ final class Bullet: SKSpriteNode {
         ])
         
         run(action)
+    }
+    
+    private func setupPhysicsBody(owner: Owner) {
+        physicsBody = .init(rectangleOf: size)
+        physicsBody?.affectedByGravity = false
+
+        switch owner {
+        case .player:
+            physicsBody?.categoryBitMask = PhysicsCategory.playerBullet
+            physicsBody?.contactTestBitMask = PhysicsCategory.enemy
+        case .enemy:
+            physicsBody?.categoryBitMask = PhysicsCategory.enemyBullet
+            physicsBody?.contactTestBitMask = PhysicsCategory.player
+        }
     }
 }

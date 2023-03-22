@@ -24,6 +24,7 @@
 		47CB3E2D29C392D800C00C91 /* JustEnemyNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CB3E2C29C392D800C00C91 /* JustEnemyNode.swift */; };
 		47CB3E2F29C399D300C00C91 /* ChasingEnemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CB3E2E29C399D300C00C91 /* ChasingEnemy.swift */; };
 		47CB3E3429C3A12400C00C91 /* CGVector+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CB3E3329C3A12400C00C91 /* CGVector+Extensions.swift */; };
+		47DE9AF229CBAAF000FAC28A /* ExplosionNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DE9AF129CBAAF000FAC28A /* ExplosionNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		47CB3E2C29C392D800C00C91 /* JustEnemyNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustEnemyNode.swift; sourceTree = "<group>"; };
 		47CB3E2E29C399D300C00C91 /* ChasingEnemy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChasingEnemy.swift; sourceTree = "<group>"; };
 		47CB3E3329C3A12400C00C91 /* CGVector+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGVector+Extensions.swift"; sourceTree = "<group>"; };
+		47DE9AF129CBAAF000FAC28A /* ExplosionNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplosionNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 			children = (
 				4783CB9929C37C8D002DC581 /* BulletNode.swift */,
 				4754257529C5E2B2007CB8D6 /* HealthBarNode.swift */,
+				47DE9AF129CBAAF000FAC28A /* ExplosionNode.swift */,
 			);
 			path = HelpingNodes;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 				47AB244229BFD401005AFCE0 /* PlayerNode.swift in Sources */,
 				47AB244429BFD55B005AFCE0 /* PhysicsCategory.swift in Sources */,
 				4783CB9A29C37C8D002DC581 /* BulletNode.swift in Sources */,
+				47DE9AF229CBAAF000FAC28A /* ExplosionNode.swift in Sources */,
 				4754257629C5E2B2007CB8D6 /* HealthBarNode.swift in Sources */,
 				47AB242629BFB6BF005AFCE0 /* GameScene.swift in Sources */,
 				47AB244029BFC168005AFCE0 /* AppConstants.swift in Sources */,
