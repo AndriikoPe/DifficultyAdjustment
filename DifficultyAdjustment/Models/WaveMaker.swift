@@ -24,8 +24,11 @@ final class WaveMaker {
     ]
 
     func makeWave() -> Wave {
-        
-        
-        return []
+        positions.map {
+            WavePiece(
+                position: $0.0, direction: $0.1,
+                enemyType: .random,
+                delay: TimeInterval.random(in: 0...15))
+        }
     }
 }

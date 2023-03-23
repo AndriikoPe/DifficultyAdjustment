@@ -9,8 +9,6 @@ import SpriteKit
 
 final class GameScene: SKScene {
     
-    // MARK: - Constants.
-    
     private enum C {
         enum Joystick {
             enum Base {
@@ -40,6 +38,7 @@ final class GameScene: SKScene {
     lazy var player = PlayerNode(joystick: joystick)
     private var enemies = Set<EnemyBaseNode>()
     private var healthBars = [(SKSpriteNode, HealthBarNode)]()
+    private let waveMaker = WaveMaker()
     
     override func didMove(to view: SKView) {
         backgroundColor = .black
@@ -77,24 +76,13 @@ final class GameScene: SKScene {
         player.timeBetweenShots = timeBetweenShots
     }
     
-    // MARK: - Setup.
-    
     private func setupEnemyWaves() {
         run(.repeatForever(
             .sequence([
                 .run { [weak self] in
-                    guard let self else { return }
-                    
-                    let enemy = Bool.random() ?
-                    JustEnemyNode(texture: SKTexture(imageNamed: "enemyShip1"), healthDelegate: self) :
-                    ChasingEnemy(playerNode: self.player, healthDelegate: self)
-                    
-                    enemy.position = .init(x: 0, y: 400)
-                    enemy.healthDelegate = self
-                    self.addChild(enemy)
-                    self.enemies.insert(enemy)
+                    self?.spawnWave()
                 },
-                .wait(forDuration: 3.0)
+                .wait(forDuration: 15.0)
             ])
         ))
     }
@@ -116,6 +104,45 @@ final class GameScene: SKScene {
         addChild(healthBar)
         
         healthBars.append((player, healthBar))
+    }
+    
+    private func spawnWave() {
+        let wave = waveMaker.makeWave()
+        
+        wave.forEach { wavePiece in
+            run(.sequence([
+                .wait(forDuration: wavePiece.delay),
+                .run { [weak self] in
+                    guard let self else { return }
+                    
+                    let enemy = self.enemyNode(of: wavePiece.enemyType, direction: wavePiece.direction)
+                    enemy.healthDelegate = self
+                    enemy.position = wavePiece.position
+                    
+                    self.addChild(enemy)
+                    self.enemies.insert(enemy)
+                    
+                    let healthBar = HealthBarNode(size: .init(width: enemy.size.width, height: 10.0))
+                    self.addChild(healthBar)
+                    
+                    self.healthBars.append((enemy, healthBar))
+                }
+            ]))
+        }
+    }
+    
+    private func enemyNode(of type: EnemyType, direction: CGFloat) -> EnemyBaseNode {
+        switch type {
+        case .justEnemy:
+            return JustEnemyNode(
+                texture: SKTexture(imageNamed: "enemyShip1"),
+                healthDelegate: self,
+                moveDirection: CGVector(dx: cos(direction), dy: sin(direction)))
+        case .chasing:
+            return ChasingEnemy(
+                playerNode: self.player,
+                healthDelegate: self)
+        }
     }
 }
 
@@ -142,7 +169,8 @@ extension GameScene: SKPhysicsContactDelegate {
 
 extension GameScene: HealthDelegate {
     func updateHealth(_ node: SKSpriteNode, newHealth: CGFloat) {
-        healthBars.first(where: { $0.0 === player })?.1.setHealth(newHealth)
+        let bar = healthBars.first(where: { $0.0 === node })?.1
+        bar?.setHealth(newHealth)
         
         if node === player {
             if newHealth <= .zero {
@@ -150,6 +178,8 @@ extension GameScene: HealthDelegate {
             }
         } else {
             if newHealth <= .zero {
+                healthBars.removeAll(where: { $0.0 === node })
+                bar?.removeFromParent()
                 node.removeFromParent()
                 ExplosionNode.createExplosion(at: node.position, on: self, size: node.size * 0.7)
             }

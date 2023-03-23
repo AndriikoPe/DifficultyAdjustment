@@ -21,7 +21,7 @@ enum EnemyType: CaseIterable {
         }
     }
     
-    var random: Self {
-        Self.allCases.randomElement()!
+    static var random: Self {
+        allCases.randomElement()!
     }
 }

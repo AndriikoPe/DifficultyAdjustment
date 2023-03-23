@@ -39,7 +39,16 @@ class EnemyBaseNode: SKSpriteNode {
         
         super.init(texture: texture, color: .clear, size: texture.size())
         
+        setupPhysicsBody()
         zRotation = atan2(moveDirection.dy, moveDirection.dx) - CGFloat.pi/2
+    }
+    
+    private func setupPhysicsBody() {
+        physicsBody = SKPhysicsBody(rectangleOf: size)
+        physicsBody?.categoryBitMask = PhysicsCategory.enemy
+        physicsBody?.contactTestBitMask = PhysicsCategory.player
+        physicsBody?.usesPreciseCollisionDetection = true
+        physicsBody?.affectedByGravity = false
     }
     
     required init?(coder aDecoder: NSCoder) {
