@@ -14,11 +14,19 @@ final class PlayerNode: SKSpriteNode {
     var timeBetweenShots: TimeInterval = 0.2
     var isShooting = true
     var moveSpeed = 4.0
+    var damageFromBullet = 0.05
+    var damageFromEnemy = 0.1
     
     // MARK: - Other properties.
     
+    weak var healthDelegate: HealthDelegate?
     private(set) var velocity = CGPoint.zero
     private(set) var lastShotTime: TimeInterval = 0
+    private(set) var health = 1.0 {
+        didSet {
+            healthDelegate?.updateHealth(self, newHealth: health)
+        }
+    }
     private let joystick: Joystick
     
     init(joystick: Joystick) {
@@ -88,9 +96,9 @@ extension PlayerNode: ColliderProtocol {
         
         switch other.categoryBitMask {
         case p.enemy:
-            break
+            health -= damageFromEnemy
         case p.enemyBullet:
-            break
+            health -= damageFromBullet
         default:
             break
         }

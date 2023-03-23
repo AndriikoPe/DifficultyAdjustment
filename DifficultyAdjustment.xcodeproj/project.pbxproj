@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		472AFCAB29CCFEA0007D23A6 /* EnemyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472AFCAA29CCFEA0007D23A6 /* EnemyType.swift */; };
+		472AFCAD29CCFF3C007D23A6 /* WavePiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472AFCAC29CCFF3C007D23A6 /* WavePiece.swift */; };
 		4754257629C5E2B2007CB8D6 /* HealthBarNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4754257529C5E2B2007CB8D6 /* HealthBarNode.swift */; };
 		4783CB9A29C37C8D002DC581 /* BulletNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4783CB9929C37C8D002DC581 /* BulletNode.swift */; };
 		47AB242029BFB6BF005AFCE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AB241F29BFB6BF005AFCE0 /* AppDelegate.swift */; };
@@ -31,6 +33,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		472AFCAA29CCFEA0007D23A6 /* EnemyType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemyType.swift; sourceTree = "<group>"; };
+		472AFCAC29CCFF3C007D23A6 /* WavePiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WavePiece.swift; sourceTree = "<group>"; };
 		4754257529C5E2B2007CB8D6 /* HealthBarNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthBarNode.swift; sourceTree = "<group>"; };
 		4783CB9929C37C8D002DC581 /* BulletNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletNode.swift; sourceTree = "<group>"; };
 		47AB241C29BFB6BF005AFCE0 /* DifficultyAdjustment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DifficultyAdjustment.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,6 +70,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		472AFCA929CCFE14007D23A6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				472AFCAC29CCFF3C007D23A6 /* WavePiece.swift */,
+				472AFCAA29CCFEA0007D23A6 /* EnemyType.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		4754257729C5E2C4007CB8D6 /* HelpingNodes */ = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				47AB241F29BFB6BF005AFCE0 /* AppDelegate.swift */,
+				472AFCA929CCFE14007D23A6 /* Models */,
 				47AB243E29BFC15D005AFCE0 /* Utils */,
 				47AB243D29BFBD63005AFCE0 /* Nodes */,
 				47AB243629BFBC46005AFCE0 /* Scenes */,
@@ -267,6 +281,8 @@
 				47AB244229BFD401005AFCE0 /* PlayerNode.swift in Sources */,
 				47DE9AF929CBB1DD00FAC28A /* CGSize+Extensions.swift in Sources */,
 				47AB244429BFD55B005AFCE0 /* PhysicsCategory.swift in Sources */,
+				472AFCAB29CCFEA0007D23A6 /* EnemyType.swift in Sources */,
+				472AFCAD29CCFF3C007D23A6 /* WavePiece.swift in Sources */,
 				4783CB9A29C37C8D002DC581 /* BulletNode.swift in Sources */,
 				47DE9AF229CBAAF000FAC28A /* ExplosionNode.swift in Sources */,
 				4754257629C5E2B2007CB8D6 /* HealthBarNode.swift in Sources */,

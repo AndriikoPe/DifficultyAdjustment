@@ -14,6 +14,11 @@ class EnemyBaseNode: SKSpriteNode {
     var shootFrequency: TimeInterval
     weak var healthDelegate: HealthDelegate?
     
+    private(set) var health = 1.0 {
+        didSet {
+            healthDelegate?.updateHealth(self, newHealth: health)
+        }
+    }
     private var lastShotTime: TimeInterval = 0.0
     
     init(
@@ -23,7 +28,7 @@ class EnemyBaseNode: SKSpriteNode {
         moveDirection: CGVector = CGVector(dx: 1, dy: 0),
         shootDirection: CGVector = CGVector(dx: 0, dy: 1),
         shootFrequency: TimeInterval = 2.0,
-        damageOnHit: CGFloat = 0.1,
+        damageOnHit: CGFloat = 0.35,
         lastShotTime: TimeInterval = 0.0
     ) {
         self.moveSpeed = moveSpeed
@@ -66,6 +71,14 @@ class EnemyBaseNode: SKSpriteNode {
 
 extension EnemyBaseNode: ColliderProtocol {
     func collide(with other: SKPhysicsBody, in scene: SKScene) {
+        let p = PhysicsCategory.self
         
+        switch other.categoryBitMask {
+        case p.player:
+            health = .zero
+        case p.playerBullet:
+            health -= damageOnHit
+        default: return
+        }
     }
 }

@@ -90,6 +90,7 @@ final class GameScene: SKScene {
                     ChasingEnemy(playerNode: self.player, healthDelegate: self)
                     
                     enemy.position = .init(x: 0, y: 400)
+                    enemy.healthDelegate = self
                     self.addChild(enemy)
                     self.enemies.insert(enemy)
                 },
@@ -107,6 +108,7 @@ final class GameScene: SKScene {
         player = PlayerNode(joystick: joystick)
         player.position = CGPoint(x: size.width * 0.5, y: size.height * 0.5)
         player.isShooting = true
+        player.healthDelegate = self
         addChild(player)
         
         let healthBar = HealthBarNode(
@@ -139,11 +141,18 @@ extension GameScene: SKPhysicsContactDelegate {
 }
 
 extension GameScene: HealthDelegate {
-    func died(_ node: SKSpriteNode) {
-        
-    }
-    
     func updateHealth(_ node: SKSpriteNode, newHealth: CGFloat) {
+        healthBars.first(where: { $0.0 === player })?.1.setHealth(newHealth)
         
+        if node === player {
+            if newHealth <= .zero {
+                // lose...
+            }
+        } else {
+            if newHealth <= .zero {
+                node.removeFromParent()
+                ExplosionNode.createExplosion(at: node.position, on: self, size: node.size * 0.7)
+            }
+        }
     }
 }

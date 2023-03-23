@@ -8,6 +8,5 @@
 import SpriteKit
 
 protocol HealthDelegate: AnyObject {
-    func died(_ node: SKSpriteNode)
     func updateHealth(_ node: SKSpriteNode, newHealth: CGFloat)
 }
