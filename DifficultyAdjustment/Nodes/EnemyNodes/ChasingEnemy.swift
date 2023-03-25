@@ -38,6 +38,8 @@ final class ChasingEnemy: EnemyBaseNode {
         
         moveDirection = directionToPlayer
         
+        zRotation = atan2(directionToPlayer.dy, directionToPlayer.dx) - CGFloat.pi/2
+        
         super.update()
     }
     

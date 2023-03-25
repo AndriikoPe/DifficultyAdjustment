@@ -39,7 +39,6 @@ final class PlayerNode: SKSpriteNode {
         physicsBody?.categoryBitMask = PhysicsCategory.player
         physicsBody?.contactTestBitMask = PhysicsCategory.enemy
         physicsBody?.collisionBitMask = PhysicsCategory.none
-        physicsBody?.usesPreciseCollisionDetection = true
         physicsBody?.affectedByGravity = false
     }
     

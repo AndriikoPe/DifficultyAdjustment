@@ -14,7 +14,7 @@ final class Bullet: SKSpriteNode {
         case enemy
     }
     
-    var moveSpeed: CGFloat = 1200.0
+    var moveSpeed: CGFloat = 1800.0
     
     init(owner: Owner, color: UIColor, size: CGSize) {
         super.init(texture: nil, color: color, size: size)

@@ -26,7 +26,6 @@ class EnemyBaseNode: SKSpriteNode {
         healthDelegate: HealthDelegate?,
         moveSpeed: CGFloat = 5.0,
         moveDirection: CGVector = CGVector(dx: 1, dy: 0),
-        shootDirection: CGVector = CGVector(dx: 0, dy: 1),
         shootFrequency: TimeInterval = 2.0,
         damageOnHit: CGFloat = 0.35,
         lastShotTime: TimeInterval = 0.0
@@ -47,8 +46,9 @@ class EnemyBaseNode: SKSpriteNode {
         physicsBody = SKPhysicsBody(rectangleOf: size)
         physicsBody?.categoryBitMask = PhysicsCategory.enemy
         physicsBody?.contactTestBitMask = PhysicsCategory.player
-        physicsBody?.usesPreciseCollisionDetection = true
+        physicsBody?.collisionBitMask = PhysicsCategory.player
         physicsBody?.affectedByGravity = false
+        physicsBody?.allowsRotation = false
     }
     
     required init?(coder aDecoder: NSCoder) {
