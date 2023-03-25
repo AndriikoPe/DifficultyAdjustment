@@ -8,12 +8,13 @@
 import SpriteKit
 
 final class TankEnemy: EnemyBaseNode {
-    init(healthDelegate: HealthDelegate) {
+    init(healthDelegate: HealthDelegate, moveDirection: CGVector) {
         super.init(
             texture: SKTexture(imageNamed: "enemyShip3"),
             healthDelegate: healthDelegate,
             health: 3.0,
             moveSpeed: 2.5,
+            moveDirection: moveDirection,
             shootFrequency: 1.5
         )
     }
