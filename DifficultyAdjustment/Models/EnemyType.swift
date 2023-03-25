@@ -10,6 +10,7 @@ import Foundation
 enum EnemyType: CaseIterable {
     case justEnemy
     case chasing
+    case tank
     
     // Value in range 0...1 that shows how hard the enemy is to deal with.
     var difficulty: CGFloat {
@@ -18,6 +19,8 @@ enum EnemyType: CaseIterable {
             return 0.1
         case .chasing:
             return 0.5
+        case .tank:
+            return 0.2
         }
     }
     

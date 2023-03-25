@@ -14,22 +14,26 @@ class EnemyBaseNode: SKSpriteNode {
     var shootFrequency: TimeInterval
     weak var healthDelegate: HealthDelegate?
     
-    private(set) var health = 1.0 {
+    
+    private(set) var health: CGFloat {
         didSet {
             healthDelegate?.updateHealth(self, newHealth: health)
         }
     }
     private var lastShotTime: TimeInterval = 0.0
+    private var enteringScreen = false
     
     init(
         texture: SKTexture,
         healthDelegate: HealthDelegate?,
+        health: CGFloat = 1.0,
         moveSpeed: CGFloat = 5.0,
         moveDirection: CGVector = CGVector(dx: 1, dy: 0),
         shootFrequency: TimeInterval = 2.0,
         damageOnHit: CGFloat = 0.35,
         lastShotTime: TimeInterval = 0.0
     ) {
+        self.health = health
         self.moveSpeed = moveSpeed
         self.moveDirection = moveDirection
         self.shootFrequency = shootFrequency
@@ -60,6 +64,21 @@ class EnemyBaseNode: SKSpriteNode {
         let dy = moveDirection.dy * moveSpeed
         position = CGPoint(x: position.x + dx, y: position.y + dy)
 
+        let sceneSize = AppConstants.sceneSize
+        if !enteringScreen {
+               if position.x >= -size.width / 2 && position.x <= sceneSize.width + size.width / 2 &&
+                   position.y >= -size.height / 2 && position.y <= sceneSize.height + size.height / 2 {
+                   enteringScreen = true
+               }
+           } else {
+               if position.x < -size.width / 2 ||
+                  position.x > sceneSize.width + size.width / 2 ||
+                  position.y < -size.height / 2 ||
+                  position.y > sceneSize.height + size.height / 2 {
+                   healthDelegate?.updateHealth(self, newHealth: 0)
+               }
+           }
+        
         shoot()
     }
     

@@ -142,6 +142,8 @@ final class GameScene: SKScene {
             return ChasingEnemy(
                 playerNode: self.player,
                 healthDelegate: self)
+        case .tank:
+            return TankEnemy(healthDelegate: self)
         }
     }
 }
@@ -179,6 +181,7 @@ extension GameScene: HealthDelegate {
         } else {
             if newHealth <= .zero {
                 healthBars.removeAll(where: { $0.0 === node })
+                if let enemy = node as? EnemyBaseNode { enemies.remove(enemy) }
                 bar?.removeFromParent()
                 node.removeFromParent()
                 ExplosionNode.createExplosion(at: node.position, on: self, size: node.size * 0.7)

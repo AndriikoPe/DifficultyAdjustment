@@ -17,7 +17,7 @@ final class ChasingEnemy: EnemyBaseNode {
         super.init(
             texture: SKTexture(imageNamed: "enemyShip2"),
             healthDelegate: healthDelegate,
-            moveSpeed: 12.0
+            moveSpeed: 8.0
         )
     }
     
