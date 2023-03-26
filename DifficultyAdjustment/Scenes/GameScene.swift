@@ -34,11 +34,13 @@ final class GameScene: SKScene {
             knobColor: c.Knob.backgroundColor, knobSize: c.Knob.size,
             joystickRadius: c.radius)
     }()
+    weak var gameStateDelegate: GameStateDelegate?
     
     lazy var player = PlayerNode(joystick: joystick)
     private var enemies = Set<EnemyBaseNode>()
     private var healthBars = [(SKSpriteNode, HealthBarNode)]()
     private let waveMaker = WaveMaker()
+    private var timer: TimerNode?
     
     override func didMove(to view: SKView) {
         backgroundColor = .black
@@ -138,6 +140,7 @@ final class GameScene: SKScene {
         addChild(timer)
         
         timer.start()
+        self.timer = timer
     }
     
     private func enemyNode(of type: EnemyType, direction: CGFloat) -> EnemyBaseNode {
@@ -191,7 +194,8 @@ extension GameScene: HealthDelegate {
         
         if node === player {
             if newHealth <= .zero {
-                // lose...
+                gameStateDelegate?.end(with: timer?.elapsedTime ?? .zero)
+                isPaused = true
             }
         } else {
             if newHealth <= .zero {

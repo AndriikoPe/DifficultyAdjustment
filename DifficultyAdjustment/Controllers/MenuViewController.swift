@@ -11,13 +11,4 @@ final class MenuViewController: UIViewController {
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         .landscape
     }
-    
-    
-    @IBOutlet var playButton: UIButton!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        playButton.sizeToFit()
-    }
 }

@@ -16,6 +16,7 @@ final class GameViewController: UIViewController {
         
         let scene = GameScene(size: AppConstants.sceneSize)
         scene.scaleMode = .aspectFill
+        scene.gameStateDelegate = self
         view.presentScene(scene)
         
         view.ignoresSiblingOrder = true
@@ -30,5 +31,28 @@ final class GameViewController: UIViewController {
 
     override var prefersStatusBarHidden: Bool {
         return true
+    }
+}
+
+extension GameViewController: GameStateDelegate {
+    func end(with time: TimeInterval) {
+        let minutes = Int(time / 60)
+        let seconds = Int(time) % 60
+        
+        let minutesString = String(format: "%02d", minutes)
+        let secondsString = String(format: "%02d", seconds)
+        
+        guard let endGameVC = UIStoryboard(name: "Main", bundle: nil)
+            .instantiateViewController(
+                withIdentifier: String(describing: LoseController.self)
+            ) as? LoseController,
+              let controllers = navigationController?.viewControllers
+        else { return }
+        
+        endGameVC.lastedTime = "\(minutesString):\(secondsString)"
+        
+        let newVcStack = controllers.filter { !($0 is GameViewController) } + [endGameVC]
+        
+        navigationController?.setViewControllers(newVcStack, animated: true)
     }
 }

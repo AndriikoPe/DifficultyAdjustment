@@ -10,7 +10,7 @@ import SpriteKit
 final class CannonEnemy: EnemyBaseNode {
     private let bulletSize = CGSize(width: 5, height: 5)
     private let sectorAngle: CGFloat = 0.75 * .pi
-    private let bulletsCount = 4
+    private let bulletsCount = 6
     private let delay = 0.1
     
     init(healthDelegate: HealthDelegate, moveDirection: CGVector) {

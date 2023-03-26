@@ -9,7 +9,7 @@ import SpriteKit
 
 final class TimerNode: SKNode {
     private var startTime: TimeInterval = 0
-    private var elapsedTime: TimeInterval = 0
+    private(set) var elapsedTime: TimeInterval = 0
     
     private var timerLabel: SKLabelNode!
     private var isRunning: Bool = false
