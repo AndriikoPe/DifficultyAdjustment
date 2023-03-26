@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="a9V-A6-i51">
     <device id="retina6_12" orientation="landscape" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -8,6 +8,53 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Menu View Controller-->
+        <scene sceneID="byv-6H-SaC">
+            <objects>
+                <viewController id="a9V-A6-i51" customClass="MenuViewController" customModule="DifficultyAdjustment" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="C3O-AY-net">
+                        <rect key="frame" x="0.0" y="0.0" width="852" height="393"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuBackground" translatesAutoresizingMaskIntoConstraints="NO" id="LFs-WT-HGq" customClass="I">
+                                <rect key="frame" x="0.0" y="0.0" width="852" height="393"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c2J-nZ-Ofl">
+                                <rect key="frame" x="366.66666666666669" y="161" width="119" height="71.333333333333314"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="48"/>
+                                <color key="tintColor" red="0.02352941222" green="0.090196087960000004" blue="0.109803915" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Play">
+                                    <color key="titleColor" red="0.29340724249096639" green="0.92514482409090903" blue="0.77483041430027022" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <buttonConfiguration key="configuration" style="plain" title="Play">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="48"/>
+                                    <color key="baseForegroundColor" red="0.29340724249096639" green="0.92514482409090903" blue="0.77483041430027022" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="BV1-FR-VrT" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="raB-S4-Qfp"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="g0X-US-OiU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="LFs-WT-HGq" secondAttribute="bottom" id="8gC-Fe-POX"/>
+                            <constraint firstItem="LFs-WT-HGq" firstAttribute="top" secondItem="C3O-AY-net" secondAttribute="top" id="DLx-dL-uUG"/>
+                            <constraint firstItem="LFs-WT-HGq" firstAttribute="trailing" secondItem="C3O-AY-net" secondAttribute="trailing" id="O0a-rz-bXs"/>
+                            <constraint firstItem="c2J-nZ-Ofl" firstAttribute="centerX" secondItem="C3O-AY-net" secondAttribute="centerX" id="O9B-PS-hE4"/>
+                            <constraint firstItem="LFs-WT-HGq" firstAttribute="leading" secondItem="C3O-AY-net" secondAttribute="leading" id="cat-XD-KEW"/>
+                            <constraint firstItem="c2J-nZ-Ofl" firstAttribute="centerY" secondItem="C3O-AY-net" secondAttribute="centerY" id="o0x-5Q-Nsb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="playButton" destination="c2J-nZ-Ofl" id="R5T-C1-3wB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4k1-Dn-Uwm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138.73239436619718" y="-718.32061068702285"/>
+        </scene>
         <!--Game View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
@@ -18,13 +65,15 @@
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="auK-Wd-BUC"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="140" y="4"/>
+            <point key="canvasLocation" x="139" y="132"/>
         </scene>
     </scenes>
     <resources>
+        <image name="menuBackground" width="800" height="600"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

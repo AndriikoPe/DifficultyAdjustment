@@ -12,6 +12,7 @@
 		472AFCAF29CCFFE6007D23A6 /* WaveMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472AFCAE29CCFFE6007D23A6 /* WaveMaker.swift */; };
 		4740897C29CF9E3400FA4BFA /* TankEnemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4740897B29CF9E3400FA4BFA /* TankEnemy.swift */; };
 		4754257629C5E2B2007CB8D6 /* HealthBarNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4754257529C5E2B2007CB8D6 /* HealthBarNode.swift */; };
+		477963F429D0B3F9007016A6 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477963F329D0B3F9007016A6 /* MenuViewController.swift */; };
 		4783CB9A29C37C8D002DC581 /* BulletNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4783CB9929C37C8D002DC581 /* BulletNode.swift */; };
 		47AB242029BFB6BF005AFCE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AB241F29BFB6BF005AFCE0 /* AppDelegate.swift */; };
 		47AB242629BFB6BF005AFCE0 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AB242529BFB6BF005AFCE0 /* GameScene.swift */; };
@@ -40,6 +41,7 @@
 		472AFCAE29CCFFE6007D23A6 /* WaveMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveMaker.swift; sourceTree = "<group>"; };
 		4740897B29CF9E3400FA4BFA /* TankEnemy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TankEnemy.swift; sourceTree = "<group>"; };
 		4754257529C5E2B2007CB8D6 /* HealthBarNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthBarNode.swift; sourceTree = "<group>"; };
+		477963F329D0B3F9007016A6 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		4783CB9929C37C8D002DC581 /* BulletNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletNode.swift; sourceTree = "<group>"; };
 		47AB241C29BFB6BF005AFCE0 /* DifficultyAdjustment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DifficultyAdjustment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47AB241F29BFB6BF005AFCE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				47AB242729BFB6BF005AFCE0 /* GameViewController.swift */,
+				477963F329D0B3F9007016A6 /* MenuViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 				47DE9AF729CBAF1B00FAC28A /* ColliderProtocol.swift in Sources */,
 				47CB3E3429C3A12400C00C91 /* CGVector+Extensions.swift in Sources */,
 				47AB243929BFBC5C005AFCE0 /* JoystickNode.swift in Sources */,
+				477963F429D0B3F9007016A6 /* MenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
