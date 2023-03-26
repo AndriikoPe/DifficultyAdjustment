@@ -14,6 +14,7 @@
 		4754257629C5E2B2007CB8D6 /* HealthBarNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4754257529C5E2B2007CB8D6 /* HealthBarNode.swift */; };
 		477963F429D0B3F9007016A6 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477963F329D0B3F9007016A6 /* MenuViewController.swift */; };
 		477963F629D0BBB6007016A6 /* TimerNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477963F529D0BBB6007016A6 /* TimerNode.swift */; };
+		477963F829D0BCE8007016A6 /* CannonEnemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477963F729D0BCE8007016A6 /* CannonEnemy.swift */; };
 		4783CB9A29C37C8D002DC581 /* BulletNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4783CB9929C37C8D002DC581 /* BulletNode.swift */; };
 		47AB242029BFB6BF005AFCE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AB241F29BFB6BF005AFCE0 /* AppDelegate.swift */; };
 		47AB242629BFB6BF005AFCE0 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AB242529BFB6BF005AFCE0 /* GameScene.swift */; };
@@ -44,6 +45,7 @@
 		4754257529C5E2B2007CB8D6 /* HealthBarNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthBarNode.swift; sourceTree = "<group>"; };
 		477963F329D0B3F9007016A6 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		477963F529D0BBB6007016A6 /* TimerNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerNode.swift; sourceTree = "<group>"; };
+		477963F729D0BCE8007016A6 /* CannonEnemy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CannonEnemy.swift; sourceTree = "<group>"; };
 		4783CB9929C37C8D002DC581 /* BulletNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletNode.swift; sourceTree = "<group>"; };
 		47AB241C29BFB6BF005AFCE0 /* DifficultyAdjustment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DifficultyAdjustment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47AB241F29BFB6BF005AFCE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 				47CB3E2C29C392D800C00C91 /* JustEnemyNode.swift */,
 				47CB3E2E29C399D300C00C91 /* ChasingEnemy.swift */,
 				4740897B29CF9E3400FA4BFA /* TankEnemy.swift */,
+				477963F729D0BCE8007016A6 /* CannonEnemy.swift */,
 			);
 			path = EnemyNodes;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 				47CB3E2F29C399D300C00C91 /* ChasingEnemy.swift in Sources */,
 				47CB3E2A29C38F9D00C00C91 /* EnemyBaseNode.swift in Sources */,
 				472AFCAF29CCFFE6007D23A6 /* WaveMaker.swift in Sources */,
+				477963F829D0BCE8007016A6 /* CannonEnemy.swift in Sources */,
 				47AB244229BFD401005AFCE0 /* PlayerNode.swift in Sources */,
 				47DE9AF929CBB1DD00FAC28A /* CGSize+Extensions.swift in Sources */,
 				47AB244429BFD55B005AFCE0 /* PhysicsCategory.swift in Sources */,

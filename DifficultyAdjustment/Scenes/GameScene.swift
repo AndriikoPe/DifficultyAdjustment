@@ -154,7 +154,11 @@ final class GameScene: SKScene {
         case .tank:
             return TankEnemy(
                 healthDelegate: self,
-                moveDirection:CGVector(dx: cos(direction), dy: sin(direction)))
+                moveDirection: CGVector(dx: cos(direction), dy: sin(direction)))
+        case .cannon:
+            return CannonEnemy(
+                healthDelegate: self,
+                moveDirection: CGVector(dx: cos(direction), dy: sin(direction)))
         }
     }
 }
