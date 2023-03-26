@@ -45,6 +45,7 @@ final class GameScene: SKScene {
         setupJoystick()
         setupPlayer()
         setupEnemyWaves()
+        setupTimer()
         physicsWorld.contactDelegate = self
     }
     
@@ -129,6 +130,14 @@ final class GameScene: SKScene {
                 }
             ]))
         }
+    }
+    
+    private func setupTimer() {
+        let timer = TimerNode()
+        timer.position = CGPoint(x: 150.0, y: size.height - 100.0)
+        addChild(timer)
+        
+        timer.start()
     }
     
     private func enemyNode(of type: EnemyType, direction: CGFloat) -> EnemyBaseNode {
