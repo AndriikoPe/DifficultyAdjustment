@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4714EE5A29D4DD9A006985CD /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4714EE5929D4DD9A006985CD /* String+Extensions.swift */; };
+		4714EE5C29D4DF27006985CD /* DataEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4714EE5B29D4DF27006985CD /* DataEntry.swift */; };
 		472AFCAB29CCFEA0007D23A6 /* EnemyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472AFCAA29CCFEA0007D23A6 /* EnemyType.swift */; };
 		472AFCAD29CCFF3C007D23A6 /* WavePiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472AFCAC29CCFF3C007D23A6 /* WavePiece.swift */; };
 		472AFCAF29CCFFE6007D23A6 /* WaveMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472AFCAE29CCFFE6007D23A6 /* WaveMaker.swift */; };
@@ -33,6 +35,8 @@
 		47CB3E2D29C392D800C00C91 /* JustEnemyNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CB3E2C29C392D800C00C91 /* JustEnemyNode.swift */; };
 		47CB3E2F29C399D300C00C91 /* ChasingEnemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CB3E2E29C399D300C00C91 /* ChasingEnemy.swift */; };
 		47CB3E3429C3A12400C00C91 /* CGVector+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CB3E3329C3A12400C00C91 /* CGVector+Extensions.swift */; };
+		47DA22D029D390CA00C59C1D /* FakeAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DA22CF29D390CA00C59C1D /* FakeAgent.swift */; };
+		47DA22D229D3948800C59C1D /* GameDataCollector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DA22D129D3948800C59C1D /* GameDataCollector.swift */; };
 		47DE9AF229CBAAF000FAC28A /* ExplosionNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DE9AF129CBAAF000FAC28A /* ExplosionNode.swift */; };
 		47DE9AF529CBADE900FAC28A /* HealthDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DE9AF429CBADE900FAC28A /* HealthDelegate.swift */; };
 		47DE9AF729CBAF1B00FAC28A /* ColliderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DE9AF629CBAF1B00FAC28A /* ColliderProtocol.swift */; };
@@ -40,6 +44,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4714EE5929D4DD9A006985CD /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		4714EE5B29D4DF27006985CD /* DataEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataEntry.swift; sourceTree = "<group>"; };
 		472AFCAA29CCFEA0007D23A6 /* EnemyType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemyType.swift; sourceTree = "<group>"; };
 		472AFCAC29CCFF3C007D23A6 /* WavePiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WavePiece.swift; sourceTree = "<group>"; };
 		472AFCAE29CCFFE6007D23A6 /* WaveMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveMaker.swift; sourceTree = "<group>"; };
@@ -67,6 +73,8 @@
 		47CB3E2C29C392D800C00C91 /* JustEnemyNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustEnemyNode.swift; sourceTree = "<group>"; };
 		47CB3E2E29C399D300C00C91 /* ChasingEnemy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChasingEnemy.swift; sourceTree = "<group>"; };
 		47CB3E3329C3A12400C00C91 /* CGVector+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGVector+Extensions.swift"; sourceTree = "<group>"; };
+		47DA22CF29D390CA00C59C1D /* FakeAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeAgent.swift; sourceTree = "<group>"; };
+		47DA22D129D3948800C59C1D /* GameDataCollector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDataCollector.swift; sourceTree = "<group>"; };
 		47DE9AF129CBAAF000FAC28A /* ExplosionNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplosionNode.swift; sourceTree = "<group>"; };
 		47DE9AF429CBADE900FAC28A /* HealthDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDelegate.swift; sourceTree = "<group>"; };
 		47DE9AF629CBAF1B00FAC28A /* ColliderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColliderProtocol.swift; sourceTree = "<group>"; };
@@ -90,6 +98,7 @@
 				472AFCAC29CCFF3C007D23A6 /* WavePiece.swift */,
 				472AFCAE29CCFFE6007D23A6 /* WaveMaker.swift */,
 				472AFCAA29CCFEA0007D23A6 /* EnemyType.swift */,
+				4714EE5B29D4DF27006985CD /* DataEntry.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -134,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				47AB241F29BFB6BF005AFCE0 /* AppDelegate.swift */,
+				47DA22CE29D390C200C59C1D /* ModelMaking */,
 				472AFCA929CCFE14007D23A6 /* Models */,
 				47AB243E29BFC15D005AFCE0 /* Utils */,
 				47AB243D29BFBD63005AFCE0 /* Nodes */,
@@ -170,6 +180,7 @@
 				47AB243A29BFBD53005AFCE0 /* CGPoint+Extensions.swift */,
 				47CB3E3329C3A12400C00C91 /* CGVector+Extensions.swift */,
 				47DE9AF829CBB1DD00FAC28A /* CGSize+Extensions.swift */,
+				4714EE5929D4DD9A006985CD /* String+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -213,6 +224,15 @@
 				47CB3E2929C38F9D00C00C91 /* EnemyBaseNode.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		47DA22CE29D390C200C59C1D /* ModelMaking */ = {
+			isa = PBXGroup;
+			children = (
+				47DA22CF29D390CA00C59C1D /* FakeAgent.swift */,
+				47DA22D129D3948800C59C1D /* GameDataCollector.swift */,
+			);
+			path = ModelMaking;
 			sourceTree = "<group>";
 		};
 		47DE9AF329CBADDE00FAC28A /* Protocols */ = {
@@ -296,6 +316,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47DA22D029D390CA00C59C1D /* FakeAgent.swift in Sources */,
 				4740897C29CF9E3400FA4BFA /* TankEnemy.swift in Sources */,
 				47DE9AF529CBADE900FAC28A /* HealthDelegate.swift in Sources */,
 				47CB3E2F29C399D300C00C91 /* ChasingEnemy.swift in Sources */,
@@ -303,8 +324,10 @@
 				472AFCAF29CCFFE6007D23A6 /* WaveMaker.swift in Sources */,
 				477963F829D0BCE8007016A6 /* CannonEnemy.swift in Sources */,
 				47AB244229BFD401005AFCE0 /* PlayerNode.swift in Sources */,
+				4714EE5C29D4DF27006985CD /* DataEntry.swift in Sources */,
 				47DE9AF929CBB1DD00FAC28A /* CGSize+Extensions.swift in Sources */,
 				477963FC29D0CCFA007016A6 /* GameStateDelegate.swift in Sources */,
+				4714EE5A29D4DD9A006985CD /* String+Extensions.swift in Sources */,
 				47AB244429BFD55B005AFCE0 /* PhysicsCategory.swift in Sources */,
 				472AFCAB29CCFEA0007D23A6 /* EnemyType.swift in Sources */,
 				477963FA29D0CA02007016A6 /* LoseController.swift in Sources */,
@@ -323,6 +346,7 @@
 				47CB3E3429C3A12400C00C91 /* CGVector+Extensions.swift in Sources */,
 				47AB243929BFBC5C005AFCE0 /* JoystickNode.swift in Sources */,
 				477963F429D0B3F9007016A6 /* MenuViewController.swift in Sources */,
+				47DA22D229D3948800C59C1D /* GameDataCollector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
