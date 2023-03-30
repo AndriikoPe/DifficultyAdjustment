@@ -20,7 +20,7 @@ final class FakeAgent {
         
         let newAccurateDifficulty = AppConstants.gameDifficultyKnob + guess
         let reward = evaluate(
-            guess: newAccurateDifficulty,
+            guess: guess,
             expectedHealth: expectedHealth(at: state.timeElapsed),
             currentHealth: state.health
         )
@@ -40,6 +40,7 @@ final class FakeAgent {
         AppConstants.gameDifficultyKnob = newAccurateDifficulty
         let guessDescription = guess > 0 ? "increased" : (guess < 0 ? "decreased" : "not changed")
         print("Game difficulty " + guessDescription)
+        print("Guess: \(guess)")
         print("New difficulty: \(AppConstants.gameDifficultyKnob)")
         print("Current health: \(state.health)")
         print("Expected health: \(expectedHealth(at: state.timeElapsed))")
@@ -51,12 +52,12 @@ final class FakeAgent {
         expectedHealth: CGFloat,
         currentHealth: CGFloat
     ) -> CGFloat {
-        let dh = currentHealth - expectedHealth
+        let dh = abs(currentHealth - expectedHealth)
         
         if currentHealth > expectedHealth {
-            return guess < 0 ? dh : -dh
+            return guess < 0 ? -dh : dh
         } else if currentHealth < expectedHealth {
-            return guess > 0 ? dh : -dh
+            return guess < 0 ? dh : -dh
         }
     
         return guess * 0.01
