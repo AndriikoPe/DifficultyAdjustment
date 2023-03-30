@@ -11,4 +11,12 @@ final class MenuViewController: UIViewController {
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         .landscape
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let logger = GameDataCollector()
+        
+        print(logger.getFileURL())
+    }
 }

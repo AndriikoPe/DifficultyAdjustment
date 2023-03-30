@@ -14,7 +14,7 @@ final class PlayerNode: SKSpriteNode {
     var isShooting = true
     private(set) var velocity = CGPoint.zero
     private(set) var lastShotTime: TimeInterval = 0
-    private(set) var health = 1.0 {
+    private(set) var health = AppConstants.playerInitialHealth {
         didSet {
             healthDelegate?.updateHealth(self, newHealth: health)
         }
@@ -23,8 +23,8 @@ final class PlayerNode: SKSpriteNode {
     private var timeBetweenShots: TimeInterval { 0.2 * AppConstants.gameDifficultyKnob }
     private var moveSpeed: CGFloat { 4.0 * (1.0 / (1.0 + (AppConstants.gameDifficultyKnob - 1.0) * 0.2)) }
 
-    private var damageFromBullet = 0.05 * AppConstants.gameDifficultyKnob
-    private var damageFromEnemy = 0.1 * AppConstants.gameDifficultyKnob
+    private var damageFromBullet: CGFloat { 0.05 * AppConstants.gameDifficultyKnob }
+    private var damageFromEnemy: CGFloat { 0.1 * AppConstants.gameDifficultyKnob }
     
     init(joystick: Joystick) {
         self.joystick = joystick

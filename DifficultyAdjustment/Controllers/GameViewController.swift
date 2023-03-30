@@ -18,11 +18,6 @@ final class GameViewController: UIViewController {
         scene.scaleMode = .aspectFill
         scene.gameStateDelegate = self
         view.presentScene(scene)
-        
-        view.ignoresSiblingOrder = true
-        view.showsFPS = true
-        view.showsNodeCount = true
-        view.showsPhysics = true
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {

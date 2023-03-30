@@ -43,7 +43,7 @@ final class GameScene: SKScene {
     private var timer: TimerNode?
     private let agent = FakeAgent()
     private var waveDamage = [CGFloat]()
-    private lazy var playerHealth = player.health
+    private var playerHealth = AppConstants.playerInitialHealth
     
     override func didMove(to view: SKView) {
         backgroundColor = .black
@@ -150,7 +150,7 @@ final class GameScene: SKScene {
             timeElapsed: elapsedTime,
             damagedLastWave: waveDamage.last ?? .zero,
             avgWaveDamage: waveDamage.average(),
-            factorDifference: AppConstants.initialDifiiculty
+            factorDifference: AppConstants.initialDifiiculty - AppConstants.gameDifficultyKnob
         )
         
         agent.guessAndLog(for: state)
