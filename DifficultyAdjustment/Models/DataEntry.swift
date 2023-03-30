@@ -10,6 +10,7 @@ import Foundation
 struct DataEntry {
     let health: CGFloat
     let healthToTime: CGFloat
+    let timeElapsed: CGFloat
     let damagedLastWave: CGFloat
     let avgWaveDamage: CGFloat
     let factorDifference: CGFloat
@@ -21,6 +22,7 @@ struct DataEntry {
         let properties = [
             String(describing: health),
             String(describing: healthToTime),
+            String(describing: timeElapsed),
             String(describing: damagedLastWave),
             String(describing: avgWaveDamage),
             String(describing: factorDifference),

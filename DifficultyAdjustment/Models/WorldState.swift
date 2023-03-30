@@ -10,6 +10,7 @@ import Foundation
 struct WorldState {
     let health: CGFloat
     let healthToTime: CGFloat
+    let timeElapsed: CGFloat
     let damagedLastWave: CGFloat
     let avgWaveDamage: CGFloat
     let factorDifference: CGFloat

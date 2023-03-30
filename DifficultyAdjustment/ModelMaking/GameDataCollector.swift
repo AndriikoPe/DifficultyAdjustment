@@ -11,10 +11,11 @@ import os.log
 final class GameDataCollector {
     
     private let fileName = "game_data.csv"
+    private let header = "health,health_to_time,time_elapsed,damaged_last_wave,avg_wave_damage,factor_difference,current_difficulty,agent_action,agent_reward\n"
     
     func write(_ data: DataEntry) {
         let fileURL = getFileURL()
-        let header = "health,health_to_time,damaged_last_wave,avg_wave_damage,factor_difference,current_difficulty,agent_action,agent_reward\n"
+        
         let row = data.toCSV() + "\n"
         
         let csvText = FileManager.default.fileExists(
