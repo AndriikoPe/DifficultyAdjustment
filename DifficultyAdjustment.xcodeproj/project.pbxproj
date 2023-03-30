@@ -52,6 +52,7 @@
 		472AFCAA29CCFEA0007D23A6 /* EnemyType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemyType.swift; sourceTree = "<group>"; };
 		472AFCAC29CCFF3C007D23A6 /* WavePiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WavePiece.swift; sourceTree = "<group>"; };
 		472AFCAE29CCFFE6007D23A6 /* WaveMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveMaker.swift; sourceTree = "<group>"; };
+		473901B729D6213F00B01A76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		4740897B29CF9E3400FA4BFA /* TankEnemy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TankEnemy.swift; sourceTree = "<group>"; };
 		4754257529C5E2B2007CB8D6 /* HealthBarNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthBarNode.swift; sourceTree = "<group>"; };
 		477963F329D0B3F9007016A6 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +148,7 @@
 		47AB241E29BFB6BF005AFCE0 /* DifficultyAdjustment */ = {
 			isa = PBXGroup;
 			children = (
+				473901B729D6213F00B01A76 /* Info.plist */,
 				47AB241F29BFB6BF005AFCE0 /* AppDelegate.swift */,
 				47DA22CE29D390C200C59C1D /* ModelMaking */,
 				472AFCA929CCFE14007D23A6 /* Models */,
@@ -503,6 +505,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9VD63Y2NJT;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DifficultyAdjustment/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -531,6 +534,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9VD63Y2NJT;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DifficultyAdjustment/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

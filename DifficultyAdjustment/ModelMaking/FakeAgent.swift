@@ -11,7 +11,7 @@ final class FakeAgent {
     private let logger = GameDataCollector()
     
     func guessAndLog(for state: WorldState) {
-        var guess = CGFloat.random(in: -0.5...0.5)
+        var guess = CGFloat.random(in: -0.2...0.2)
         
         let newDifficulty = guess + AppConstants.gameDifficultyKnob
         if newDifficulty < 0.2 || newDifficulty > 1.8 {
@@ -38,13 +38,6 @@ final class FakeAgent {
         ))
         
         AppConstants.gameDifficultyKnob = newAccurateDifficulty
-        let guessDescription = guess > 0 ? "increased" : (guess < 0 ? "decreased" : "not changed")
-        print("Game difficulty " + guessDescription)
-        print("Guess: \(guess)")
-        print("New difficulty: \(AppConstants.gameDifficultyKnob)")
-        print("Current health: \(state.health)")
-        print("Expected health: \(expectedHealth(at: state.timeElapsed))")
-        print("Reward: \(reward)\n")
     }
     
     private func evaluate(
