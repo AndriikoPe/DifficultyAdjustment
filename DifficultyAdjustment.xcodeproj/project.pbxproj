@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4714EE5A29D4DD9A006985CD /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4714EE5929D4DD9A006985CD /* String+Extensions.swift */; };
 		4714EE5C29D4DF27006985CD /* DataEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4714EE5B29D4DF27006985CD /* DataEntry.swift */; };
+		4714EE5E29D4E858006985CD /* WorldState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4714EE5D29D4E858006985CD /* WorldState.swift */; };
 		472AFCAB29CCFEA0007D23A6 /* EnemyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472AFCAA29CCFEA0007D23A6 /* EnemyType.swift */; };
 		472AFCAD29CCFF3C007D23A6 /* WavePiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472AFCAC29CCFF3C007D23A6 /* WavePiece.swift */; };
 		472AFCAF29CCFFE6007D23A6 /* WaveMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472AFCAE29CCFFE6007D23A6 /* WaveMaker.swift */; };
@@ -46,6 +47,7 @@
 /* Begin PBXFileReference section */
 		4714EE5929D4DD9A006985CD /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		4714EE5B29D4DF27006985CD /* DataEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataEntry.swift; sourceTree = "<group>"; };
+		4714EE5D29D4E858006985CD /* WorldState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldState.swift; sourceTree = "<group>"; };
 		472AFCAA29CCFEA0007D23A6 /* EnemyType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemyType.swift; sourceTree = "<group>"; };
 		472AFCAC29CCFF3C007D23A6 /* WavePiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WavePiece.swift; sourceTree = "<group>"; };
 		472AFCAE29CCFFE6007D23A6 /* WaveMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveMaker.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				472AFCAE29CCFFE6007D23A6 /* WaveMaker.swift */,
 				472AFCAA29CCFEA0007D23A6 /* EnemyType.swift */,
 				4714EE5B29D4DF27006985CD /* DataEntry.swift */,
+				4714EE5D29D4E858006985CD /* WorldState.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 				4783CB9A29C37C8D002DC581 /* BulletNode.swift in Sources */,
 				47DE9AF229CBAAF000FAC28A /* ExplosionNode.swift in Sources */,
 				4754257629C5E2B2007CB8D6 /* HealthBarNode.swift in Sources */,
+				4714EE5E29D4E858006985CD /* WorldState.swift in Sources */,
 				47AB242629BFB6BF005AFCE0 /* GameScene.swift in Sources */,
 				47AB244029BFC168005AFCE0 /* AppConstants.swift in Sources */,
 				47CB3E2D29C392D800C00C91 /* JustEnemyNode.swift in Sources */,

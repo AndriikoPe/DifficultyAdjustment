@@ -13,6 +13,7 @@ struct DataEntry {
     let damagedLastWave: CGFloat
     let avgWaveDamage: CGFloat
     let factorDifference: CGFloat
+    let currentDifficulty: CGFloat
     let agentAction: CGFloat
     let agentReward: CGFloat
     
@@ -23,6 +24,7 @@ struct DataEntry {
             String(describing: damagedLastWave),
             String(describing: avgWaveDamage),
             String(describing: factorDifference),
+            String(describing: currentDifficulty),
             String(describing: agentAction),
             String(describing: agentReward)
         ]

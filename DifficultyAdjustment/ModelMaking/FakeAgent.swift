@@ -8,5 +8,9 @@
 import Foundation
 
 final class FakeAgent {
+    private let logger = GameDataCollector()
     
+    func guessAndLog(for state: WorldState) {
+        
+    }
 }

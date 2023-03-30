@@ -9,17 +9,8 @@ import SpriteKit
 
 final class PlayerNode: SKSpriteNode {
     
-    // MARK: - Tweakable params.
-    
-    var timeBetweenShots: TimeInterval = 0.2
-    var isShooting = true
-    var moveSpeed = 4.0
-    var damageFromBullet = 0.05
-    var damageFromEnemy = 0.1
-    
-    // MARK: - Other properties.
-    
     weak var healthDelegate: HealthDelegate?
+    
     private(set) var velocity = CGPoint.zero
     private(set) var lastShotTime: TimeInterval = 0
     private(set) var health = 1.0 {
@@ -28,6 +19,12 @@ final class PlayerNode: SKSpriteNode {
         }
     }
     private let joystick: Joystick
+    private var timeBetweenShots: TimeInterval { 0.2 * AppConstants.gameDifficultyKnob }
+    private var isShooting = true
+    private var moveSpeed: CGFloat { 4.0 * (1.0 / AppConstants.gameDifficultyKnob) }
+
+    private var damageFromBullet = 0.05 * AppConstants.gameDifficultyKnob
+    private var damageFromEnemy = 0.1 * AppConstants.gameDifficultyKnob
     
     init(joystick: Joystick) {
         self.joystick = joystick
