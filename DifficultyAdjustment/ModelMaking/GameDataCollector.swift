@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import os.log
 
 final class GameDataCollector {
     
@@ -44,7 +43,7 @@ final class GameDataCollector {
         }
     }
     
-    private func getFileURL() -> URL {
+    func getFileURL() -> URL {
         let dirURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         return dirURL.appendingPathComponent(fileName)
     }

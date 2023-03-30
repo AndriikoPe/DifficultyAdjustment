@@ -11,6 +11,7 @@ final class PlayerNode: SKSpriteNode {
     
     weak var healthDelegate: HealthDelegate?
     
+    var isShooting = true
     private(set) var velocity = CGPoint.zero
     private(set) var lastShotTime: TimeInterval = 0
     private(set) var health = 1.0 {
@@ -20,7 +21,6 @@ final class PlayerNode: SKSpriteNode {
     }
     private let joystick: Joystick
     private var timeBetweenShots: TimeInterval { 0.2 * AppConstants.gameDifficultyKnob }
-    private var isShooting = true
     private var moveSpeed: CGFloat { 4.0 * (1.0 / AppConstants.gameDifficultyKnob) }
 
     private var damageFromBullet = 0.05 * AppConstants.gameDifficultyKnob

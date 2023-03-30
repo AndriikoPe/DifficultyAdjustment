@@ -12,5 +12,7 @@ enum AppConstants {
     static let targetPlayTime: TimeInterval = 60.0 * 3.0
     
     /// Modify this properpty to make game easier of harder.
-    static var gameDifficultyKnob = 1.0
+    static var gameDifficultyKnob = initialDifiiculty
+    
+    static let initialDifiiculty = 1.0
 }

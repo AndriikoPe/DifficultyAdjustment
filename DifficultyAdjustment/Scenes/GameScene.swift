@@ -41,6 +41,9 @@ final class GameScene: SKScene {
     private var healthBars = [(SKSpriteNode, HealthBarNode)]()
     private let waveMaker = WaveMaker()
     private var timer: TimerNode?
+    private let agent = FakeAgent()
+    private var waveDamage = [CGFloat]()
+    private lazy var playerHealth = player.health
     
     override func didMove(to view: SKView) {
         backgroundColor = .black
@@ -73,19 +76,23 @@ final class GameScene: SKScene {
         player.position.x = max(min(player.position.x, playableArea.maxX), playableArea.minX)
         player.position.y = max(min(player.position.y, playableArea.maxY), playableArea.minY)
     }
-    
-    
-    func updateTimeBetweenShots(_ timeBetweenShots: TimeInterval) {
-        player.timeBetweenShots = timeBetweenShots
-    }
-    
+
     private func setupEnemyWaves() {
         run(.repeatForever(
             .sequence([
                 .run { [weak self] in
                     self?.spawnWave()
                 },
-                .wait(forDuration: 15.0)
+                .wait(forDuration: 15.0),
+                .run { [weak self] in
+                    guard let self else { return }
+                    
+                    let dh = self.playerHealth - self.player.health
+                    self.playerHealth = self.player.health
+                    self.waveDamage.append(dh)
+                    
+                    self.updateDifficulty()
+                }
             ])
         ))
     }
@@ -132,6 +139,21 @@ final class GameScene: SKScene {
                 }
             ]))
         }
+    }
+    
+    private func updateDifficulty() {
+        guard let elapsedTime = timer?.elapsedTime, elapsedTime != .zero else { return }
+        
+        let state = WorldState(
+            health: player.health,
+            healthToTime: player.health / elapsedTime,
+            timeElapsed: elapsedTime,
+            damagedLastWave: waveDamage.last ?? .zero,
+            avgWaveDamage: waveDamage.average(),
+            factorDifference: AppConstants.initialDifiiculty
+        )
+        
+        agent.guessAndLog(for: state)
     }
     
     private func setupTimer() {
