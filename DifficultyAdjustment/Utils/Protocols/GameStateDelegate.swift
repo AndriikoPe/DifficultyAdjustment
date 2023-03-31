@@ -9,4 +9,5 @@ import Foundation
 
 protocol GameStateDelegate: AnyObject {
     func end(with time: TimeInterval)
+    func updateDifficulty(_ difficulty: CGFloat)
 }

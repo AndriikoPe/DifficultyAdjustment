@@ -52,6 +52,7 @@ final class GameScene: SKScene {
         setupEnemyWaves()
         setupTimer()
         physicsWorld.contactDelegate = self
+        gameStateDelegate?.updateDifficulty(AppConstants.gameDifficultyKnob)
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -154,6 +155,7 @@ final class GameScene: SKScene {
         )
         
         agent.guessAndLog(for: state)
+        gameStateDelegate?.updateDifficulty(AppConstants.gameDifficultyKnob)
     }
     
     private func setupTimer() {

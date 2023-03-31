@@ -9,6 +9,8 @@ import UIKit
 import SpriteKit
 
 final class GameViewController: UIViewController {
+    @IBOutlet private var difficultyLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -49,5 +51,9 @@ extension GameViewController: GameStateDelegate {
         let newVcStack = controllers.filter { !($0 is GameViewController) } + [endGameVC]
         
         navigationController?.setViewControllers(newVcStack, animated: true)
+    }
+    
+    func updateDifficulty(_ difficulty: CGFloat) {
+        difficultyLabel.text = difficulty.description
     }
 }

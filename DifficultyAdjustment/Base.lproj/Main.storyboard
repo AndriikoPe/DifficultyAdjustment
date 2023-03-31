@@ -60,14 +60,29 @@
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="852" height="393"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ua-nC-aTw">
+                                <rect key="frame" x="817" y="359" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1Ua-nC-aTw" firstAttribute="bottom" secondItem="4qk-I5-YsI" secondAttribute="bottom" id="7Va-us-R0s"/>
+                            <constraint firstItem="4qk-I5-YsI" firstAttribute="trailing" secondItem="1Ua-nC-aTw" secondAttribute="trailing" constant="35" id="LVy-Pl-NXt"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="auK-Wd-BUC"/>
+                    <connections>
+                        <outlet property="difficultyLabel" destination="1Ua-nC-aTw" id="hV2-Dk-jZk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="229" y="242"/>
+            <point key="canvasLocation" x="228.87323943661974" y="241.98473282442748"/>
         </scene>
         <!--Lose Controller-->
         <scene sceneID="BgP-66-MSd">
