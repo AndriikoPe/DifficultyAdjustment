@@ -24,5 +24,6 @@ final class LoseController: UIViewController {
         super.viewDidLoad()
         
         timeLabel.text = lastedTime
+        AppConstants.gameDifficultyKnob = AppConstants.initialDifiiculty
     }
 }
