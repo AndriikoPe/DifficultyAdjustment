@@ -23,8 +23,8 @@ final class PlayerNode: SKSpriteNode {
     private var timeBetweenShots: TimeInterval { 0.2 * AppConstants.gameDifficultyKnob }
     private var moveSpeed: CGFloat { 4.0 * (1.0 / (1.0 + (AppConstants.gameDifficultyKnob - 1.0) * 0.3)) }
 
-    private var damageFromBullet: CGFloat { 0.05 * AppConstants.gameDifficultyKnob }
-    private var damageFromEnemy: CGFloat { 0.1 * AppConstants.gameDifficultyKnob }
+    private var damageFromBullet: CGFloat { 0.015 * AppConstants.gameDifficultyKnob }
+    private var damageFromEnemy: CGFloat { 0.05 * AppConstants.gameDifficultyKnob }
     
     init(joystick: Joystick) {
         self.joystick = joystick
