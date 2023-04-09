@@ -43,6 +43,7 @@
 		47DE9AF529CBADE900FAC28A /* HealthDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DE9AF429CBADE900FAC28A /* HealthDelegate.swift */; };
 		47DE9AF729CBAF1B00FAC28A /* ColliderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DE9AF629CBAF1B00FAC28A /* ColliderProtocol.swift */; };
 		47DE9AF929CBB1DD00FAC28A /* CGSize+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DE9AF829CBB1DD00FAC28A /* CGSize+Extensions.swift */; };
+		F2DEB9553BA021EB3B4CC970 /* Pods_DifficultyAdjustment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A45A825E52CDD883583791C /* Pods_DifficultyAdjustment.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +85,9 @@
 		47DE9AF429CBADE900FAC28A /* HealthDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDelegate.swift; sourceTree = "<group>"; };
 		47DE9AF629CBAF1B00FAC28A /* ColliderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColliderProtocol.swift; sourceTree = "<group>"; };
 		47DE9AF829CBB1DD00FAC28A /* CGSize+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize+Extensions.swift"; sourceTree = "<group>"; };
+		5A45A825E52CDD883583791C /* Pods_DifficultyAdjustment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DifficultyAdjustment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6EC2F65350C59F30BFB8275A /* Pods-DifficultyAdjustment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DifficultyAdjustment.debug.xcconfig"; path = "Target Support Files/Pods-DifficultyAdjustment/Pods-DifficultyAdjustment.debug.xcconfig"; sourceTree = "<group>"; };
+		B6876CF64817A4BB1D6890CE /* Pods-DifficultyAdjustment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DifficultyAdjustment.release.xcconfig"; path = "Target Support Files/Pods-DifficultyAdjustment/Pods-DifficultyAdjustment.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,12 +95,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2DEB9553BA021EB3B4CC970 /* Pods_DifficultyAdjustment.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4682A6409DD1279718B05BD8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6EC2F65350C59F30BFB8275A /* Pods-DifficultyAdjustment.debug.xcconfig */,
+				B6876CF64817A4BB1D6890CE /* Pods-DifficultyAdjustment.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		472AFCA929CCFE14007D23A6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +149,8 @@
 			children = (
 				47AB241E29BFB6BF005AFCE0 /* DifficultyAdjustment */,
 				47AB241D29BFB6BF005AFCE0 /* Products */,
+				4682A6409DD1279718B05BD8 /* Pods */,
+				945905FB67A0A55660B959B1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -253,6 +270,14 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		945905FB67A0A55660B959B1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5A45A825E52CDD883583791C /* Pods_DifficultyAdjustment.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -260,6 +285,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 47AB243329BFB6BF005AFCE0 /* Build configuration list for PBXNativeTarget "DifficultyAdjustment" */;
 			buildPhases = (
+				A4D3E15679FD06CC86250856 /* [CP] Check Pods Manifest.lock */,
 				47AB241829BFB6BF005AFCE0 /* Sources */,
 				47AB241929BFB6BF005AFCE0 /* Frameworks */,
 				47AB241A29BFB6BF005AFCE0 /* Resources */,
@@ -318,6 +344,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A4D3E15679FD06CC86250856 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DifficultyAdjustment-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		47AB241829BFB6BF005AFCE0 /* Sources */ = {
@@ -498,6 +549,7 @@
 		};
 		47AB243429BFB6BF005AFCE0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6EC2F65350C59F30BFB8275A /* Pods-DifficultyAdjustment.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -527,6 +579,7 @@
 		};
 		47AB243529BFB6BF005AFCE0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6876CF64817A4BB1D6890CE /* Pods-DifficultyAdjustment.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
