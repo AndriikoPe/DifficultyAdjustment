@@ -53,7 +53,9 @@ final class GameScene: SKScene {
         setupEnemyWaves()
         setupTimer()
         physicsWorld.contactDelegate = self
-        gameStateDelegate?.updateDifficulty(AppConstants.gameDifficultyKnob)
+        gameStateDelegate?.updateAction(
+            AppConstants.gameDifficultyKnob,
+            lastAction: .zero)
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -146,33 +148,44 @@ final class GameScene: SKScene {
     private func updateDifficulty() {
         guard let elapsedTime = timer?.elapsedTime, elapsedTime != .zero else { return }
         
-        let state = WorldState(
-            health: player.health,
-            healthToTime: player.health / elapsedTime,
-            timeElapsed: elapsedTime,
-            damagedLastWave: waveDamage.last ?? .zero,
-            avgWaveDamage: waveDamage.average(),
-            factorDifference: AppConstants.initialDifiiculty - AppConstants.gameDifficultyKnob
-        )
+       
         
         switch AppConstants.regulator {
         case .random:
-            fakeAgent.guessAndLog(for: state)
+            let state = WorldState(
+                health: player.health,
+                healthToTime: player.health / elapsedTime,
+                timeElapsed: elapsedTime,
+                damagedLastWave: waveDamage.last ?? .zero,
+                avgWaveDamage: waveDamage.average(),
+                factorDifference: AppConstants.initialDifiiculty - AppConstants.gameDifficultyKnob)
+            
+            let action = fakeAgent.guessAndLog(for: state)
+            gameStateDelegate?.updateAction(
+                AppConstants.gameDifficultyKnob, lastAction: action)
         case .real:
             Task {
+                let state = WorldStateDto(
+                    health: player.health,
+                    healthToTime: player.health / elapsedTime,
+                    timeElapsed: elapsedTime,
+                    damagedLastWave: waveDamage.last ?? .zero,
+                    avgWaveDamage: waveDamage.average(),
+                    factorDifference: AppConstants.initialDifiiculty - AppConstants.gameDifficultyKnob,
+                    currentDifficulty: AppConstants.gameDifficultyKnob)
+                
                 guard let action = try? await realAgent.getAction(for: state) else {
                     print("Action determining went wrong.")
                     return
                 }
                 
                 await MainActor.run {
-                    AppConstants.gameDifficultyKnob = action
+                    AppConstants.gameDifficultyKnob += action
+                    gameStateDelegate?.updateAction(
+                        AppConstants.gameDifficultyKnob, lastAction: action)
                 }
             }
         }
-        
-        
-        gameStateDelegate?.updateDifficulty(AppConstants.gameDifficultyKnob)
     }
     
     private func setupTimer() {

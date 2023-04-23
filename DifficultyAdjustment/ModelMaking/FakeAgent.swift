@@ -10,7 +10,7 @@ import Foundation
 final class FakeAgent {
     private let logger = GameDataCollector()
     
-    func guessAndLog(for state: WorldState) {
+    func guessAndLog(for state: WorldState) -> Double {
         var guess = CGFloat.random(in: -0.2...0.2)
         
         let newDifficulty = guess + AppConstants.gameDifficultyKnob
@@ -38,6 +38,8 @@ final class FakeAgent {
         ))
         
         AppConstants.gameDifficultyKnob = newAccurateDifficulty
+        
+        return guess
     }
     
     private func evaluate(

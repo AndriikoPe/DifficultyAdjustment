@@ -10,6 +10,7 @@ import SpriteKit
 
 final class GameViewController: UIViewController {
     @IBOutlet private var difficultyLabel: UILabel!
+    @IBOutlet private var lastActionLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +29,11 @@ final class GameViewController: UIViewController {
 
     override var prefersStatusBarHidden: Bool {
         return true
+    }
+    
+    
+    deinit {
+        print("Deinitialized game vc")
     }
 }
 
@@ -53,7 +59,8 @@ extension GameViewController: GameStateDelegate {
         navigationController?.setViewControllers(newVcStack, animated: true)
     }
     
-    func updateDifficulty(_ difficulty: CGFloat) {
-        difficultyLabel.text = difficulty.description
+    func updateAction(_ difficulty: CGFloat, lastAction: CGFloat) {
+        difficultyLabel.text = "Difficulty: \(difficulty.description.prefix(7))"
+        lastActionLabel.text = "Last action: \(lastAction.description.prefix(7))"
     }
 }
