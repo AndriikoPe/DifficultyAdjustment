@@ -17,6 +17,8 @@ final class MenuViewController: UIViewController {
         
         let logger = GameDataCollector()
         
-        print(logger.getFileURL())
+        DispatchQueue.main.asyncAfter(deadline: .now() + 8.0) {
+//            _ = RealAgent().getAction(for: )
+        }
     }
 }
