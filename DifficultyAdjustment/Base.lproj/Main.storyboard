@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="852" height="393"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuBackground" translatesAutoresizingMaskIntoConstraints="NO" id="LFs-WT-HGq" customClass="I">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuBackground" translatesAutoresizingMaskIntoConstraints="NO" id="LFs-WT-HGq">
                                 <rect key="frame" x="0.0" y="0.0" width="852" height="393"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c2J-nZ-Ofl">
@@ -35,19 +35,36 @@
                                     <segue destination="BV1-FR-VrT" kind="show" id="q4e-T1-joH"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="nsD-Q7-7Vd">
+                                <rect key="frame" x="378.66666666666669" y="20" width="95" height="32"/>
+                                <color key="backgroundColor" systemColor="systemCyanColor"/>
+                                <segments>
+                                    <segment title="Fake"/>
+                                    <segment title="Real"/>
+                                </segments>
+                                <color key="selectedSegmentTintColor" red="0.32292205521151729" green="0.45683070307091966" blue="0.76859849691390991" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="didSelectAgent:" destination="a9V-A6-i51" eventType="valueChanged" id="Db3-Vu-zJl"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="g0X-US-OiU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="LFs-WT-HGq" secondAttribute="bottom" id="8gC-Fe-POX"/>
                             <constraint firstItem="LFs-WT-HGq" firstAttribute="top" secondItem="C3O-AY-net" secondAttribute="top" id="DLx-dL-uUG"/>
+                            <constraint firstItem="nsD-Q7-7Vd" firstAttribute="top" secondItem="C3O-AY-net" secondAttribute="top" constant="20" symbolic="YES" id="Ky7-JB-BK6"/>
                             <constraint firstItem="LFs-WT-HGq" firstAttribute="trailing" secondItem="C3O-AY-net" secondAttribute="trailing" id="O0a-rz-bXs"/>
                             <constraint firstItem="c2J-nZ-Ofl" firstAttribute="centerX" secondItem="C3O-AY-net" secondAttribute="centerX" id="O9B-PS-hE4"/>
+                            <constraint firstItem="nsD-Q7-7Vd" firstAttribute="centerX" secondItem="C3O-AY-net" secondAttribute="centerX" id="TxM-pX-55J"/>
                             <constraint firstItem="LFs-WT-HGq" firstAttribute="leading" secondItem="C3O-AY-net" secondAttribute="leading" id="cat-XD-KEW"/>
                             <constraint firstItem="c2J-nZ-Ofl" firstAttribute="centerY" secondItem="C3O-AY-net" secondAttribute="centerY" id="o0x-5Q-Nsb"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="02y-np-c8A"/>
+                    <connections>
+                        <outlet property="segmentedControl" destination="nsD-Q7-7Vd" id="DyL-qu-I1g"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4k1-Dn-Uwm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -181,6 +198,9 @@
         <image name="menuBackground" width="800" height="600"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemCyanColor">
+            <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

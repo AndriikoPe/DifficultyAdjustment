@@ -16,9 +16,13 @@ enum AppConstants {
     static var gameDifficultyKnob = initialDifiiculty
     static let initialDifiiculty = 1.0
     
-    static var regulator: Regulator = .random
+    static var regulator: Regulator = .random {
+        didSet {
+            Defaults.agent = regulator
+        }
+    }
     
-    enum Regulator {
+    enum Regulator: Int {
         case random
         case real
     }
