@@ -17,6 +17,15 @@ final class MenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupBackgroundGesture()
+        setupSegmentedControl()
+    }
+    
+    @IBAction private func didSelectAgent(_ sender: UISegmentedControl) {
+        AppConstants.regulator = .init(rawValue: sender.selectedSegmentIndex)!
+    }
+    
+    private func setupSegmentedControl() {
         segmentedControl.setTitleTextAttributes(
             [NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
         segmentedControl.setTitleTextAttributes(
@@ -24,7 +33,14 @@ final class MenuViewController: UIViewController {
         segmentedControl.selectedSegmentIndex = Defaults.agent.rawValue
     }
     
-    @IBAction private func didSelectAgent(_ sender: UISegmentedControl) {
-        AppConstants.regulator = .init(rawValue: sender.selectedSegmentIndex)!
+    private func setupBackgroundGesture() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(toggleSegmentedControl))
+        tap.numberOfTapsRequired = 3
+        
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc private func toggleSegmentedControl() {
+        segmentedControl.isHidden.toggle()
     }
 }

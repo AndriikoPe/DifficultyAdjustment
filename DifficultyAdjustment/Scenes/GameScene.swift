@@ -42,7 +42,7 @@ final class GameScene: SKScene {
     private let waveMaker = WaveMaker()
     private var timer: TimerNode?
     private lazy var fakeAgent = FakeAgent()
-    private lazy var realAgent = RealAgent()
+    private let realAgent = RealAgent()
     private var waveDamage = [CGFloat]()
     private var playerHealth = AppConstants.playerInitialHealth
     

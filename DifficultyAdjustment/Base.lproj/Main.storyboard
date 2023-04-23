@@ -107,6 +107,7 @@
                     <navigationItem key="navigationItem" id="auK-Wd-BUC"/>
                     <connections>
                         <outlet property="difficultyLabel" destination="1Ua-nC-aTw" id="hV2-Dk-jZk"/>
+                        <outlet property="labelsStackView" destination="fUT-iI-w4I" id="gwv-Rm-0cQ"/>
                         <outlet property="lastActionLabel" destination="ihB-bI-6Cs" id="Y2t-hG-m2y"/>
                     </connections>
                 </viewController>

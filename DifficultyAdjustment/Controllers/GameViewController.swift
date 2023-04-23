@@ -11,6 +11,7 @@ import SpriteKit
 final class GameViewController: UIViewController {
     @IBOutlet private var difficultyLabel: UILabel!
     @IBOutlet private var lastActionLabel: UILabel!
+    @IBOutlet private var labelsStackView: UIStackView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +22,7 @@ final class GameViewController: UIViewController {
         scene.scaleMode = .aspectFill
         scene.gameStateDelegate = self
         view.presentScene(scene)
+        setupStackGesture()
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -31,6 +33,14 @@ final class GameViewController: UIViewController {
         return true
     }
     
+    private func setupStackGesture() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(toggleStack))
+        labelsStackView.addGestureRecognizer(tap)
+    }
+    
+    @objc private func toggleStack() {
+        labelsStackView.alpha = labelsStackView.alpha.isZero ? 1.0 : .zero
+    }
     
     deinit {
         print("Deinitialized game vc")
