@@ -10,7 +10,7 @@ import Foundation
 final class RealAgent {
     private let fileUrl = Bundle.main.url(forResource: "UrlFile", withExtension: nil)!
     
-    func getAction(for state: WorldStateDto) async throws -> Double {
+    func getAction(for state: WorldState) async throws -> Double {
         guard let urlString = try? String(
             contentsOf: fileUrl, encoding: .utf8
         ).trimmingCharacters(in: .whitespacesAndNewlines),
@@ -35,6 +35,6 @@ final class RealAgent {
     }
     
     private struct HttpBody: Encodable {
-        let data: WorldStateDto
+        let data: WorldState
     }
 }

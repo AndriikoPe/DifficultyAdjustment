@@ -14,6 +14,12 @@ enum AppConstants {
     
     /// Modify this properpty to make game easier of harder.
     static var gameDifficultyKnob = initialDifiiculty
-    
     static let initialDifiiculty = 1.0
+    
+    static var regulator: Regulator = .random
+    
+    enum Regulator {
+        case random
+        case real
+    }
 }

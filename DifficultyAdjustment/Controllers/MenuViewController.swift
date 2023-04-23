@@ -11,14 +11,4 @@ final class MenuViewController: UIViewController {
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         .landscape
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        let logger = GameDataCollector()
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 8.0) {
-//            _ = RealAgent().getAction(for: )
-        }
-    }
 }

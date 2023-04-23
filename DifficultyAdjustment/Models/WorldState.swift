@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct WorldState {
+struct WorldState: Encodable {
     let health: CGFloat
     let healthToTime: CGFloat
     let timeElapsed: CGFloat

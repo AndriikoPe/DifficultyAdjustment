@@ -33,7 +33,6 @@
 		47AB244029BFC168005AFCE0 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AB243F29BFC168005AFCE0 /* AppConstants.swift */; };
 		47AB244229BFD401005AFCE0 /* PlayerNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AB244129BFD401005AFCE0 /* PlayerNode.swift */; };
 		47AB244429BFD55B005AFCE0 /* PhysicsCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AB244329BFD55B005AFCE0 /* PhysicsCategory.swift */; };
-		47ACD20129F53E5E006F12D0 /* WorldStateDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47ACD20029F53E5E006F12D0 /* WorldStateDto.swift */; };
 		47ACD20329F53FBD006F12D0 /* UrlFile in Resources */ = {isa = PBXBuildFile; fileRef = 47ACD20229F53FBD006F12D0 /* UrlFile */; };
 		47C7C65029D58D5300241AAB /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C7C64F29D58D5300241AAB /* Array+Extensions.swift */; };
 		47CB3E2A29C38F9D00C00C91 /* EnemyBaseNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CB3E2929C38F9D00C00C91 /* EnemyBaseNode.swift */; };
@@ -77,7 +76,6 @@
 		47AB243F29BFC168005AFCE0 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		47AB244129BFD401005AFCE0 /* PlayerNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerNode.swift; sourceTree = "<group>"; };
 		47AB244329BFD55B005AFCE0 /* PhysicsCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsCategory.swift; sourceTree = "<group>"; };
-		47ACD20029F53E5E006F12D0 /* WorldStateDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldStateDto.swift; sourceTree = "<group>"; };
 		47ACD20229F53FBD006F12D0 /* UrlFile */ = {isa = PBXFileReference; lastKnownFileType = text; path = UrlFile; sourceTree = "<group>"; };
 		47C7C64F29D58D5300241AAB /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		47CB3E2929C38F9D00C00C91 /* EnemyBaseNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemyBaseNode.swift; sourceTree = "<group>"; };
@@ -111,7 +109,6 @@
 				472AFCAA29CCFEA0007D23A6 /* EnemyType.swift */,
 				4714EE5B29D4DF27006985CD /* DataEntry.swift */,
 				4714EE5D29D4E858006985CD /* WorldState.swift */,
-				47ACD20029F53E5E006F12D0 /* WorldStateDto.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -361,7 +358,6 @@
 				477963F629D0BBB6007016A6 /* TimerNode.swift in Sources */,
 				472AFCAD29CCFF3C007D23A6 /* WavePiece.swift in Sources */,
 				4783CB9A29C37C8D002DC581 /* BulletNode.swift in Sources */,
-				47ACD20129F53E5E006F12D0 /* WorldStateDto.swift in Sources */,
 				47DE9AF229CBAAF000FAC28A /* ExplosionNode.swift in Sources */,
 				4754257629C5E2B2007CB8D6 /* HealthBarNode.swift in Sources */,
 				4714EE5E29D4E858006985CD /* WorldState.swift in Sources */,

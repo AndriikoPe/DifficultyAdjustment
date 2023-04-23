@@ -41,7 +41,8 @@ final class GameScene: SKScene {
     private var healthBars = [(SKSpriteNode, HealthBarNode)]()
     private let waveMaker = WaveMaker()
     private var timer: TimerNode?
-    private let agent = FakeAgent()
+    private lazy var fakeAgent = FakeAgent()
+    private lazy var realAgent = RealAgent()
     private var waveDamage = [CGFloat]()
     private var playerHealth = AppConstants.playerInitialHealth
     
@@ -154,7 +155,23 @@ final class GameScene: SKScene {
             factorDifference: AppConstants.initialDifiiculty - AppConstants.gameDifficultyKnob
         )
         
-        agent.guessAndLog(for: state)
+        switch AppConstants.regulator {
+        case .random:
+            fakeAgent.guessAndLog(for: state)
+        case .real:
+            Task {
+                guard let action = try? await realAgent.getAction(for: state) else {
+                    print("Action determining went wrong.")
+                    return
+                }
+                
+                await MainActor.run {
+                    AppConstants.gameDifficultyKnob = action
+                }
+            }
+        }
+        
+        
         gameStateDelegate?.updateDifficulty(AppConstants.gameDifficultyKnob)
     }
     

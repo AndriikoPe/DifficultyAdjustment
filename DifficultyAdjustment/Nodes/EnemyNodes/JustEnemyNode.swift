@@ -7,6 +7,4 @@
 
 import Foundation
 
-final class JustEnemyNode: EnemyBaseNode {
-    
-}
+final class JustEnemyNode: EnemyBaseNode {}
