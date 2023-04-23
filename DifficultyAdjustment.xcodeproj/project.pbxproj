@@ -40,6 +40,7 @@
 		47CB3E2D29C392D800C00C91 /* JustEnemyNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CB3E2C29C392D800C00C91 /* JustEnemyNode.swift */; };
 		47CB3E2F29C399D300C00C91 /* ChasingEnemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CB3E2E29C399D300C00C91 /* ChasingEnemy.swift */; };
 		47CB3E3429C3A12400C00C91 /* CGVector+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CB3E3329C3A12400C00C91 /* CGVector+Extensions.swift */; };
+		47D6F07929F57F8E005BB72C /* UrlFile in Resources */ = {isa = PBXBuildFile; fileRef = 47D6F07829F57F8E005BB72C /* UrlFile */; };
 		47DA22D029D390CA00C59C1D /* FakeAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DA22CF29D390CA00C59C1D /* FakeAgent.swift */; };
 		47DA22D229D3948800C59C1D /* GameDataCollector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DA22D129D3948800C59C1D /* GameDataCollector.swift */; };
 		47DE9AF229CBAAF000FAC28A /* ExplosionNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DE9AF129CBAAF000FAC28A /* ExplosionNode.swift */; };
@@ -84,6 +85,7 @@
 		47CB3E2C29C392D800C00C91 /* JustEnemyNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustEnemyNode.swift; sourceTree = "<group>"; };
 		47CB3E2E29C399D300C00C91 /* ChasingEnemy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChasingEnemy.swift; sourceTree = "<group>"; };
 		47CB3E3329C3A12400C00C91 /* CGVector+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGVector+Extensions.swift"; sourceTree = "<group>"; };
+		47D6F07829F57F8E005BB72C /* UrlFile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UrlFile; sourceTree = "<group>"; };
 		47DA22CF29D390CA00C59C1D /* FakeAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeAgent.swift; sourceTree = "<group>"; };
 		47DA22D129D3948800C59C1D /* GameDataCollector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDataCollector.swift; sourceTree = "<group>"; };
 		47DE9AF129CBAAF000FAC28A /* ExplosionNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplosionNode.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				479D77ED29F4399600F33540 /* RealAgent.swift */,
+				47D6F07829F57F8E005BB72C /* UrlFile */,
 			);
 			path = RealAgent;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 			files = (
 				47AB242B29BFB6BF005AFCE0 /* Main.storyboard in Resources */,
 				47AB242D29BFB6BF005AFCE0 /* Assets.xcassets in Resources */,
+				47D6F07929F57F8E005BB72C /* UrlFile in Resources */,
 				47AB243029BFB6BF005AFCE0 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
