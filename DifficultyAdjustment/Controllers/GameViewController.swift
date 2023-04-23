@@ -35,7 +35,9 @@ final class GameViewController: UIViewController {
     
     private func setupStackGesture() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(toggleStack))
-        labelsStackView.addGestureRecognizer(tap)
+        tap.numberOfTapsRequired = 3
+        
+        view.addGestureRecognizer(tap)
     }
     
     @objc private func toggleStack() {
