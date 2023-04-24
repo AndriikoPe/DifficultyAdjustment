@@ -2,7 +2,10 @@
 This project requires a Python server and an Xcode project to be run. Follow the instructions below to get started.
 
 Getting Started
+
+
 Prerequisites
+
 You'll need the following installed on your local machine:
 
 Python server, Xcode
