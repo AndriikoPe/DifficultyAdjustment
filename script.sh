@@ -1,7 +1,7 @@
 # Type a script or drag a script file from your workspace to insert its path.
 #!/bin/bash
 
-../ngrok/ngrok http 5000 --log=stdout > /dev/null &
+./ngrok http 5000 --log=stdout > /dev/null &
 sleep 5
 ngrok_url=$(curl -s localhost:4040/api/tunnels | jq -r '.tunnels[0].public_url')
 
