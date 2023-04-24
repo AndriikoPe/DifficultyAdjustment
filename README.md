@@ -9,6 +9,7 @@ Python server, Xcode
 
 
 Installation
+
 Clone this repository to your local machine.
 Start the Python server by running main.py.
 Run script.sh in your terminal.
@@ -16,6 +17,7 @@ Open the Xcode project.
 
 
 Usage
+
 Make sure the Python server is running.
 Run the script script.sh in your terminal to start ngrok server.
 Open the Xcode project to interact with the project.
