@@ -8,7 +8,7 @@ Prerequisites
 
 You'll need the following installed on your local machine:
 
-Python server, Xcode
+Python server https://github.com/MrPelmen/DifficultyAdjustmentServer, Xcode
 
 
 Installation
